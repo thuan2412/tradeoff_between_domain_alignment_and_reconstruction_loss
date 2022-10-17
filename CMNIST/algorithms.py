@@ -276,103 +276,103 @@ class CORAL(AbstractMMD):
 
 
 
-# #### 1. MMD + reconstruction loss             
-# class IB_IRM(ERM):
-#     """Information Bottleneck based IRM on feature with conditionning"""
+#### 1. MMD + reconstruction loss             
+class IB_IRM(ERM):
+    """Information Bottleneck based IRM on feature with conditionning"""
 
-#     def __init__(self, input_shape, num_classes, num_domains, hparams):
-#         super(IB_IRM, self).__init__(input_shape, num_classes, num_domains,
-#                                   hparams)
-#         self.optimizer = torch.optim.Adam(
-#             list(self.featurizer.parameters()) + list(self.classifier.parameters()),
-#             lr=self.hparams["lr"],
-#             weight_decay=self.hparams['weight_decay']
-#         )
-#         self.register_buffer('update_count', torch.tensor([0]))
+    def __init__(self, input_shape, num_classes, num_domains, hparams):
+        super(IB_IRM, self).__init__(input_shape, num_classes, num_domains,
+                                  hparams)
+        self.optimizer = torch.optim.Adam(
+            list(self.featurizer.parameters()) + list(self.classifier.parameters()),
+            lr=self.hparams["lr"],
+            weight_decay=self.hparams['weight_decay']
+        )
+        self.register_buffer('update_count', torch.tensor([0]))
 
-#     @staticmethod
-#     def my_cdist(self, x1, x2):
-#         x1_norm = x1.pow(2).sum(dim=-1, keepdim=True)
-#         x2_norm = x2.pow(2).sum(dim=-1, keepdim=True)
-#         res = torch.addmm(x2_norm.transpose(-2, -1),
-#                           x1,
-#                           x2.transpose(-2, -1), alpha=-2).add_(x1_norm)
-#         return res.clamp_min_(1e-30)
+    @staticmethod
+    def my_cdist(self, x1, x2):
+        x1_norm = x1.pow(2).sum(dim=-1, keepdim=True)
+        x2_norm = x2.pow(2).sum(dim=-1, keepdim=True)
+        res = torch.addmm(x2_norm.transpose(-2, -1),
+                          x1,
+                          x2.transpose(-2, -1), alpha=-2).add_(x1_norm)
+        return res.clamp_min_(1e-30)
 
-#     def gaussian_kernel(self, x, y, gamma=[0.001, 0.01, 0.1, 1, 10, 100,
-#                                           1000]):
-#         D = self.my_cdist(x, y)
-#         K = torch.zeros_like(D)
+    def gaussian_kernel(self, x, y, gamma=[0.001, 0.01, 0.1, 1, 10, 100,
+                                          1000]):
+        D = self.my_cdist(x, y)
+        K = torch.zeros_like(D)
 
-#         for g in gamma:
-#             K.add_(torch.exp(D.mul(-g)))
+        for g in gamma:
+            K.add_(torch.exp(D.mul(-g)))
 
-#         return K
+        return K
 
-#     def mmd(self, x, y): ### using Gaussian kernel here - fix for MMD 
-#         Kxx = self.gaussian_kernel(x, x).mean()
-#         Kyy = self.gaussian_kernel(y, y).mean()
-#         Kxy = self.gaussian_kernel(x, y).mean()
-#         return Kxx + Kyy - 2 * Kxy
+    def mmd(self, x, y): ### using Gaussian kernel here - fix for MMD 
+        Kxx = self.gaussian_kernel(x, x).mean()
+        Kyy = self.gaussian_kernel(y, y).mean()
+        Kxy = self.gaussian_kernel(x, y).mean()
+        return Kxx + Kyy - 2 * Kxy
 
-#     def update(self, minibatches, unlabeled=None):
-#         device = "cuda" if minibatches[0][0].is_cuda else "cpu"
-#         ib_penalty_weight = (self.hparams['ib_lambda'] if self.update_count
-#                           >= self.hparams['ib_penalty_anneal_iters'] else
-#                           0.0)
-#         mmd_penalty_weight = (self.hparams['mmd_lambda'] if self.update_count
-#                   >= self.hparams['mmd_penalty_anneal_iters'] else 0.0)
+    def update(self, minibatches, unlabeled=None):
+        device = "cuda" if minibatches[0][0].is_cuda else "cpu"
+        ib_penalty_weight = (self.hparams['ib_lambda'] if self.update_count
+                          >= self.hparams['ib_penalty_anneal_iters'] else
+                          0.0)
+        mmd_penalty_weight = (self.hparams['mmd_lambda'] if self.update_count
+                  >= self.hparams['mmd_penalty_anneal_iters'] else 0.0)
                   
-#         objective = 0
-#         penalty = 0
-#         ib_penalty = 0
-#         nmb = len(minibatches)
+        objective = 0
+        penalty = 0
+        ib_penalty = 0
+        nmb = len(minibatches)
 
-#         features = [self.featurizer(xi) for xi, _ in minibatches]
-#         classifs = [self.classifier(fi) for fi in features]
-#         targets = [yi for _, yi in minibatches]
-#         all_x = torch.cat([x for x,y in minibatches])
-#         all_features = self.featurizer(all_x)
+        features = [self.featurizer(xi) for xi, _ in minibatches]
+        classifs = [self.classifier(fi) for fi in features]
+        targets = [yi for _, yi in minibatches]
+        all_x = torch.cat([x for x,y in minibatches])
+        all_features = self.featurizer(all_x)
         
-#         ###### MMD loss
-#         for i in range(nmb):
-#             objective += F.cross_entropy(classifs[i], targets[i]) ### emperical risk
-#             for j in range(i + 1, nmb):
-#                 penalty += self.mmd(features[i], features[j])
+        ###### MMD loss
+        for i in range(nmb):
+            objective += F.cross_entropy(classifs[i], targets[i]) ### emperical risk
+            for j in range(i + 1, nmb):
+                penalty += self.mmd(features[i], features[j])
 
-#         objective /= nmb
-#         if nmb > 1:
-#             penalty /= (nmb * (nmb - 1) / 2)*10
-#         loss = objective + penalty * mmd_penalty_weight  ### first + second term
+        objective /= nmb
+        if nmb > 1:
+            penalty /= (nmb * (nmb - 1) / 2)*10
+        loss = objective + penalty * mmd_penalty_weight  ### first + second term
         
-#         ##### Reconstruction loss
-#         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-#         d_model = Decoder().to(device)
-#         latent_code = all_features ### same variable 
-#         batch_data =  all_x[:, :, :-1, :-1] ### same variabel but since 27x27 so just delete the last dimension
-#         recon_loss = nn.MSELoss().to(device)
-#         recon_image = d_model(latent_code)
-#         recon_image = recon_image[:, :-1, :, :] ### co on k khi ma minh bo 1 channel di?
-#         loss_recon = recon_loss(batch_data,recon_image)
+        ##### Reconstruction loss
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        d_model = Decoder().to(device)
+        latent_code = all_features ### same variable 
+        batch_data =  all_x[:, :, :-1, :-1] ### same variabel but since 27x27 so just delete the last dimension
+        recon_loss = nn.MSELoss().to(device)
+        recon_image = d_model(latent_code)
+        recon_image = recon_image[:, :-1, :, :] ### co on k khi ma minh bo 1 channel di?
+        loss_recon = recon_loss(batch_data,recon_image)
         
-#         ## The final loss sumup of all 3 loss terms
-#         loss += ib_penalty * ib_penalty_weight  ## loss + third term
+        ## The final loss sumup of all 3 loss terms
+        loss += ib_penalty * ib_penalty_weight  ## loss + third term
 
-#         if self.update_count == self.hparams['ib_penalty_anneal_iters'] or self.update_count == self.hparams['mmd_penalty_anneal_iters']:
-#             # Reset Adam, because it doesn't like the sharp jump in gradient
-#             # magnitudes that happens at this step.
-#             self.optimizer = torch.optim.Adam(
-#                 list(self.featurizer.parameters()) + list(self.classifier.parameters()),
-#                 lr=self.hparams["lr"],
-#                 weight_decay=self.hparams['weight_decay'])
+        if self.update_count == self.hparams['ib_penalty_anneal_iters'] or self.update_count == self.hparams['mmd_penalty_anneal_iters']:
+            # Reset Adam, because it doesn't like the sharp jump in gradient
+            # magnitudes that happens at this step.
+            self.optimizer = torch.optim.Adam(
+                list(self.featurizer.parameters()) + list(self.classifier.parameters()),
+                lr=self.hparams["lr"],
+                weight_decay=self.hparams['weight_decay'])
 
-#         self.optimizer.zero_grad()
-#         loss.backward()
-#         self.optimizer.step()
+        self.optimizer.zero_grad()
+        loss.backward()
+        self.optimizer.step()
 
-#         self.update_count += 1
-#         return {'loss': loss.item(), 
-#                 'IB_penalty': ib_penalty.item()}
+        self.update_count += 1
+        return {'loss': loss.item(), 
+                'IB_penalty': ib_penalty.item()}
 
 
 # ### 2. IRM + reconstruction loss
