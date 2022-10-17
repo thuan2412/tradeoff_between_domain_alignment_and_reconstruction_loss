@@ -1,5 +1,5 @@
 # tradeoff_between_domain_alignment_and_reconstruction_loss
-This code is from paper "Joint covariate-alignment and concept-alignment: a framework for domain generalization" which is accepted at 2022 IEEE International Workshop on Machine Learning for Signal Processing, Agu. 22--25, 2022, Xi'an, China.
+This code is from paper "Trade-off between reconstruction loss and feature alignment for domain generalization". 
 
 ####### A. For CS-CMNIST dataset only!
 
@@ -13,7 +13,7 @@ numpy 1.19.1
 
 tqdm 4.41.1
 
-Second, please take a look at the tested algorithms in "algorithm.py". The algorithms are denoted from #1 to # 4 in order of xxx . To keep the same number of hyper-parameters and utilize the existing source code, all algorithms xxx are under the same name of "IBIRM". Please select only one algorithm from these 04 algorithms to run at a time and comment out other ones. In the default code, we are using xxx algorithm and commented out other ones.
+Second, please take a look at the tested algorithms in "algorithm.py". The algorithms are denoted from #1 to # 4 in order of IRM + reconstruction loss, CEM + reconstruction loss, IRM-MMD + reconstruction loss, IB-IRM + reconstruction loss. To keep the same number of hyper-parameters and utilize the existing source code, all 04 algorithms are under the same name of "IBIRM". Please select only one algorithm from these 04 algorithms to run at a time and comment out other ones. In the default code, we are using "IRM + reconstruction loss" algorithm and commented out other ones.
 
 Third, please run "sweep_train.py" to get the result. "sweep_train.py" scans over the algorithms and the hyper-parameters. The setting of hyper-parameters can be found at the end of "sweep_train.py". Please select the algorithm you want to sweep and comment out other ones.
 
@@ -68,6 +68,6 @@ Finally, to view the results of your sweep by:
 
 python -m domainbed.scripts.collect_results --input_dir=/my/sweep/output/path
 
-Note: please take a look at the tested algorithms in "algorithms.py". The algorithms are denoted from #1 to #4 in order: xxx. Please select only one algorithm from 04 algorithms to run at a time and comment out other ones. In the default code, we are using the MMD+reconstruction loss algorithm and commented out other ones.
+Note: please take a look at the tested algorithms in "algorithms.py". The algorithms are denoted from #1 to #4 in order: MMD + reconstruction loss, IRM + reconstruction loss, CORAL + reconstruction loss, and ERM + reconstruction loss. Please select only one algorithm from these 04 algorithms to run at a time and comment out other ones. In the default code, we are using the "MMD + reconstruction loss algorithm" and commented out other ones.
 
 Our code is based on this repo at https://github.com/facebookresearch/DomainBed.
