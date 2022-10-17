@@ -1,0 +1,31 @@
+Args.output_dir is:  train_output
+Args: Namespace(data_dir='~/data/', dataset='FullColoredMNIST', algorithm='IBIRM', hparams=None, hparams_seed=0, trial_seed=0, seed=0, steps=2001, checkpoint_freq=2000, test_envs=[0], output_dir='train_output', holdout_fraction=0.05, skip_model_save=False, lr=0.1, irm_lambda=None, irm_step=0, vrex_lambda=None, vrex_step=0, ib_lambda=None, ib_step=0, mmd_lambda=None, mmd_step=0, class_condition=False, normalize=False, dro_eta=None, bs=128, wd=0, sch_size=-1, d=0, debug=False, type=0, ratio=0.9, env_seed=1, no_aug=False, xyl=1, n_restarts=5, test_val=0)
+Hparams: {'data_augmentation': True, 'resnet18': False, 'lr': 0.1, 'batch_size': 128, 'weight_decay': 0, 'class_balanced': False, 'resnet_dropout': 0.0, 'irm_lambda': 100.0, 'irm_penalty_anneal_iters': 0, 'vrex_lambda': 10.0, 'vrex_penalty_anneal_iters': 500, 'ib_lambda': 1, 'ib_penalty_anneal_iters': 0, 'mmd_lambda': 10.0, 'mmd_penalty_anneal_iters': 0, 'mixup_alpha': 0.2, 'groupdro_eta': 0.01, 'mmd_gamma': 1.0, 'mlp_width': 256, 'mlp_depth': 3, 'mlp_dropout': 0.0, 'mldg_beta': 1.0, 'mtl_ema': 0.99, 'sag_w_adv': 0.1, 'class_condition': False, 'normalize': False, 'xylopt': 1, 'xylnn': 1, 'dataset': 'FullColoredMNIST', 'sch_size': 600}
+RRRRRRR Hyper sweep for IB-IRM
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+Traceback (most recent call last):
+  File "/cluster/tufts/aeronlab/tnguye34/condaenv/IBM1/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/cluster/tufts/aeronlab/tnguye34/condaenv/IBM1/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/cluster/tufts/aeronlab/tnguye34/CS-CMNIST/domainbed/sweep_train.py", line 274, in <module>
+    test_acc, test_std, val_acc, val_std = run(args, hparams, device)
+  File "/cluster/tufts/aeronlab/tnguye34/CS-CMNIST/domainbed/sweep_train.py", line 152, in run
+    test_acc, val_acc = train(args, hparams, device)
+  File "/cluster/tufts/aeronlab/tnguye34/CS-CMNIST/domainbed/sweep_train.py", line 76, in train
+    algorithm.to(device)
+  File "/cluster/tufts/aeronlab/tnguye34/condaenv/IBM1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 907, in to
+    return self._apply(convert)
+  File "/cluster/tufts/aeronlab/tnguye34/condaenv/IBM1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 578, in _apply
+    module._apply(fn)
+  File "/cluster/tufts/aeronlab/tnguye34/condaenv/IBM1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 578, in _apply
+    module._apply(fn)
+  File "/cluster/tufts/aeronlab/tnguye34/condaenv/IBM1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 601, in _apply
+    param_applied = fn(param)
+  File "/cluster/tufts/aeronlab/tnguye34/condaenv/IBM1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 905, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+RuntimeError: CUDA error: uncorrectable ECC error encountered
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.

@@ -1,0 +1,15 @@
+Args.output_dir is:  train_output
+Args: Namespace(data_dir='~/data/', dataset='FullColoredMNIST', algorithm='IBIRM', hparams=None, hparams_seed=0, trial_seed=0, seed=0, steps=2001, checkpoint_freq=2000, test_envs=[0], output_dir='train_output', holdout_fraction=0.05, skip_model_save=False, lr=0.1, irm_lambda=None, irm_step=0, vrex_lambda=None, vrex_step=0, ib_lambda=None, ib_step=0, mmd_lambda=None, mmd_step=0, class_condition=False, normalize=False, dro_eta=None, bs=128, wd=0, sch_size=-1, d=0, debug=False, type=0, ratio=0.9, env_seed=1, no_aug=False, xyl=1, n_restarts=5, test_val=0)
+Hparams: {'data_augmentation': True, 'resnet18': False, 'lr': 0.1, 'batch_size': 128, 'weight_decay': 0, 'class_balanced': False, 'resnet_dropout': 0.0, 'irm_lambda': 100.0, 'irm_penalty_anneal_iters': 0, 'vrex_lambda': 10.0, 'vrex_penalty_anneal_iters': 500, 'ib_lambda': 1, 'ib_penalty_anneal_iters': 0, 'mmd_lambda': 10.0, 'mmd_penalty_anneal_iters': 0, 'mixup_alpha': 0.2, 'groupdro_eta': 0.01, 'mmd_gamma': 1.0, 'mlp_width': 256, 'mlp_depth': 3, 'mlp_dropout': 0.0, 'mldg_beta': 1.0, 'mtl_ema': 0.99, 'sag_w_adv': 0.1, 'class_condition': False, 'normalize': False, 'xylopt': 1, 'xylnn': 1, 'dataset': 'FullColoredMNIST', 'sch_size': 600}
+RRRRRRR Hyper sweep for IB-IRM
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10055  0.07718  0.20259  0.18181  0.18983  0.18010  0.00000  334.606  2.30551  0.00005  0        0.75280  0.19621  0.18096  3.32213 
+0.40554  0.40223  0.83313  0.83276  0.79049  0.80789  11.5486  44.0141  0.18831  0.02918  2000     0.12131  0.81181  0.82032  0.43694 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09820  0.10806  0.09532  0.08061  0.09942  0.09519  0.00000  335.235  2.29966  -0.0000  0        0.14456  0.09737  0.08790  3.32854 

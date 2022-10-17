@@ -1,0 +1,1990 @@
+Args.output_dir is:  train_output
+Args: Namespace(data_dir='~/data/', dataset='FullColoredMNIST', algorithm='IBIRM', hparams=None, hparams_seed=0, trial_seed=0, seed=0, steps=2001, checkpoint_freq=2000, test_envs=[0], output_dir='train_output', holdout_fraction=0.05, skip_model_save=False, lr=0.1, irm_lambda=None, irm_step=0, vrex_lambda=None, vrex_step=0, ib_lambda=None, ib_step=0, mmd_lambda=None, mmd_step=0, class_condition=False, normalize=False, dro_eta=None, bs=128, wd=0, sch_size=-1, d=0, debug=False, type=0, ratio=0.9, env_seed=1, no_aug=False, xyl=1, n_restarts=5, test_val=0)
+Hparams: {'data_augmentation': True, 'resnet18': False, 'lr': 0.1, 'batch_size': 128, 'weight_decay': 0, 'class_balanced': False, 'resnet_dropout': 0.0, 'irm_lambda': 100.0, 'irm_penalty_anneal_iters': 0, 'vrex_lambda': 10.0, 'vrex_penalty_anneal_iters': 500, 'ib_lambda': 1, 'ib_penalty_anneal_iters': 0, 'mmd_lambda': 10.0, 'mmd_penalty_anneal_iters': 0, 'mixup_alpha': 0.2, 'groupdro_eta': 0.01, 'mmd_gamma': 1.0, 'mlp_width': 256, 'mlp_depth': 3, 'mlp_dropout': 0.0, 'mldg_beta': 1.0, 'mtl_ema': 0.99, 'sag_w_adv': 0.1, 'class_condition': False, 'normalize': False, 'xylopt': 1, 'xylnn': 1, 'dataset': 'FullColoredMNIST', 'sch_size': 600}
+RRRRRRR Hyper sweep for IB-IRM
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14854  0.12607  0.25826  0.23756  0.24735  0.23499  0.00000  2.30010  2.29882  -0.0002  0        0.95448  0.25280  0.23627  0.06209 
+0.63623  0.62521  0.99891  0.99914  0.96806  0.96054  11.5486  0.10386  0.10140  0.00776  2000     0.09754  0.98348  0.97984  0.14936 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09793  0.09691  0.09888  0.09176  0.09866  0.09262  0.00000  2.28755  2.28607  -0.0000  0        0.12263  0.09877  0.09219  0.06241 
+0.60600  0.59519  0.99864  0.99828  0.96386  0.95711  11.5486  0.11026  0.10771  0.00857  2000     0.09719  0.98125  0.97770  0.15618 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10023  0.09948  0.10019  0.10120  0.09929  0.09176  0.00000  2.27515  2.27353  0.00034  0        0.12074  0.09974  0.09648  0.05428 
+0.60384  0.58404  0.99900  0.99914  0.96210  0.95025  11.5486  0.11465  0.11208  0.00843  2000     0.09712  0.98055  0.97470  0.15878 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  2.40097  2.39954  0.01111  0        0.12150  0.10008  0.10806  0.05281 
+0.59861  0.61149  0.99887  1.00000  0.96454  0.94940  11.5486  0.10947  0.10698  0.00806  2000     0.09711  0.98170  0.97470  0.15210 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  2.34328  2.34194  0.00275  0        0.12150  0.10360  0.08790  0.04895 
+0.60808  0.61063  0.99846  0.99914  0.96544  0.96140  11.5486  0.11028  0.10770  0.00809  2000     0.09709  0.98195  0.98027  0.16111 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:     0.01   irm_lambda:     0.01 val acc: 97.74 +- 0.24 test acc: 61.06 +- 1.32
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14854  0.12693  0.25921  0.23842  0.24825  0.23499  0.00000  2.30009  2.29882  -0.0002  0        0.12133  0.25373  0.23670  0.06209 
+0.64065  0.62264  0.99869  0.99914  0.96878  0.95969  11.5486  0.10387  0.10073  0.00750  2000     0.09704  0.98373  0.97941  0.15026 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09793  0.09691  0.09888  0.09176  0.09861  0.09262  0.00000  2.28755  2.28607  -0.0000  0        0.12163  0.09875  0.09219  0.06241 
+0.60727  0.59519  0.99873  0.99828  0.96422  0.95797  11.5486  0.10968  0.10645  0.00807  2000     0.09708  0.98148  0.97813  0.15359 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.09948  0.10019  0.10120  0.09929  0.09176  0.00000  2.27518  2.27353  0.00034  0        0.12103  0.09974  0.09648  0.05428 
+0.60172  0.57718  0.99905  0.99828  0.96206  0.95368  11.5486  0.11458  0.11129  0.00807  2000     0.09696  0.98055  0.97598  0.15913 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  2.40197  2.39954  0.01111  0        0.12202  0.10008  0.10806  0.05281 
+0.60136  0.60977  0.99896  0.99914  0.96427  0.94940  11.5486  0.10936  0.10616  0.00778  2000     0.09702  0.98161  0.97427  0.15275 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  2.34353  2.34194  0.00275  0        0.12220  0.10360  0.08790  0.04895 
+0.60808  0.61320  0.99837  0.99914  0.96544  0.95969  11.5486  0.10971  0.10643  0.00780  2000     0.09711  0.98191  0.97941  0.16060 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:     0.01   irm_lambda:     0.10 val acc: 97.74 +- 0.20 test acc: 61.18 +- 1.47
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12202  0.10977  0.06284  0.05917  0.06924  0.06861  0.00000  0.02382  2.29882  -0.0002  0        0.12217  0.06604  0.06389  0.06209 
+0.14182  0.13979  0.38773  0.36964  0.36635  0.33705  11.5486  0.02147  1.90053  0.00098  2000     0.09708  0.37704  0.35334  0.07886 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  0.02406  2.28607  -0.0000  0        0.12128  0.09757  0.09219  0.06241 
+0.10280  0.10891  0.73577  0.71698  0.67406  0.65608  11.5486  0.01673  2.02813  -0.0050  2000     0.09704  0.70492  0.68653  0.07532 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  0.02446  2.27353  0.00034  0        0.12189  0.09976  0.09648  0.05428 
+0.15838  0.14665  0.87377  0.86964  0.79943  0.80017  11.5486  -0.0205  1.80268  -0.0407  2000     0.09716  0.83660  0.83490  0.09873 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  0.03607  2.39954  0.01111  0        0.12208  0.10008  0.10806  0.05281 
+0.10668  0.10291  0.36026  0.34391  0.33486  0.37564  11.5486  0.02148  2.02325  -0.0000  2000     0.09718  0.34756  0.35977  0.05775 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  0.02722  2.34194  0.00275  0        0.12211  0.10360  0.08790  0.04895 
+0.14660  0.15780  0.81039  0.82075  0.74371  0.74099  11.5486  0.01328  1.97518  -0.0081  2000     0.09718  0.77705  0.78087  0.09085 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:     0.01   irm_lambda:   100.00 val acc: 60.31 +- 20.68 test acc: 13.13 +- 2.23
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12125  0.11149  0.05972  0.05574  0.06672  0.06775  0.00000  0.00336  2.29882  -0.0002  0        0.12239  0.06322  0.06175  0.06209 
+0.12012  0.10634  0.31560  0.31732  0.29449  0.29502  11.5486  0.00341  2.27177  0.00003  2000     0.09721  0.30504  0.30617  0.02207 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  0.00371  2.28607  -0.0000  0        0.12233  0.09757  0.09219  0.06241 
+0.10673  0.11578  0.66558  0.65780  0.60865  0.59176  11.5486  0.00155  2.24270  -0.0019  2000     0.09709  0.63711  0.62478  0.03668 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  0.00422  2.27353  0.00034  0        0.12159  0.09976  0.09648  0.05428 
+0.14340  0.12693  0.85961  0.85763  0.78738  0.79588  11.5486  -0.0197  1.95015  -0.0234  2000     0.09687  0.82349  0.82675  0.08687 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  0.01481  2.39954  0.01111  0        0.12198  0.10008  0.10806  0.05281 
+0.11191  0.11063  0.28984  0.30274  0.27410  0.27015  11.5486  0.00315  2.26993  -0.0002  2000     0.09694  0.28197  0.28644  0.02331 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  0.00640  2.34194  0.00275  0        0.12197  0.10360  0.08790  0.04895 
+0.17164  0.17838  0.88297  0.87735  0.81003  0.81903  11.5486  -0.0120  1.96744  -0.0157  2000     0.09711  0.84650  0.84819  0.07581 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:     0.01   irm_lambda:  1000.00 val acc: 57.85 +- 24.33 test acc: 13.08 +- 2.40
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14841  0.12607  0.25565  0.23670  0.24509  0.23241  0.00000  2.30569  2.29882  -0.0002  0        0.12121  0.25037  0.23456  0.06209 
+0.65454  0.63464  0.99887  0.99914  0.96968  0.95883  11.5486  0.10943  0.09818  0.00809  2000     0.09713  0.98427  0.97898  0.10285 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09793  0.09691  0.09888  0.09176  0.09838  0.09262  0.00000  2.29317  2.28607  -0.0000  0        0.12175  0.09863  0.09219  0.06241 
+0.63149  0.62693  0.99891  0.99828  0.96639  0.95797  11.5486  0.11501  0.10372  0.00873  2000     0.09717  0.98265  0.97813  0.10309 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  2.28003  2.27353  0.00034  0        0.12302  0.09976  0.09648  0.05428 
+0.64187  0.61578  0.99905  0.99828  0.96621  0.95626  11.5486  0.11677  0.10502  0.00843  2000     0.09723  0.98263  0.97727  0.10768 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  2.40572  2.39954  0.01111  0        0.12336  0.10008  0.10806  0.05281 
+0.61588  0.62006  0.99882  1.00000  0.96548  0.95283  11.5486  0.11640  0.10488  0.00846  2000     0.09728  0.98215  0.97641  0.10546 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  2.34769  2.34194  0.00275  0        0.12135  0.10360  0.08790  0.04895 
+0.63605  0.63379  0.99860  0.99914  0.96810  0.96226  11.5486  0.11426  0.10251  0.00856  2000     0.09724  0.98335  0.98070  0.10776 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:     0.10   irm_lambda:     0.01 val acc: 97.83 +- 0.15 test acc: 63.60 +- 1.27
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14850  0.12607  0.25641  0.23670  0.24568  0.23241  0.00000  2.30567  2.29882  -0.0002  0        0.12161  0.25104  0.23456  0.06209 
+0.65269  0.63722  0.99887  0.99914  0.96973  0.96226  11.5486  0.11047  0.09844  0.00777  2000     0.09723  0.98430  0.98070  0.10368 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09793  0.09691  0.09888  0.09176  0.09829  0.09262  0.00000  2.29316  2.28607  -0.0000  0        0.12144  0.09859  0.09219  0.06241 
+0.63181  0.61149  0.99900  0.99828  0.96666  0.95969  11.5486  0.11542  0.10322  0.00847  2000     0.09717  0.98283  0.97898  0.10465 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  2.28006  2.27353  0.00034  0        0.12199  0.09976  0.09648  0.05428 
+0.63303  0.60291  0.99905  0.99656  0.96476  0.95626  11.5486  0.11840  0.10593  0.00815  2000     0.09723  0.98191  0.97641  0.10763 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  2.40672  2.39954  0.01111  0        0.12204  0.10008  0.10806  0.05281 
+0.60966  0.62435  0.99891  1.00000  0.96494  0.95197  11.5486  0.11692  0.10465  0.00813  2000     0.09725  0.98193  0.97598  0.10560 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  2.34794  2.34194  0.00275  0        0.12329  0.10360  0.08790  0.04895 
+0.63551  0.63293  0.99851  0.99828  0.96779  0.96312  11.5486  0.11455  0.10218  0.00822  2000     0.09720  0.98315  0.98070  0.10651 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:     0.10   irm_lambda:     0.10 val acc: 97.86 +- 0.20 test acc: 63.25 +- 1.37
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12315  0.10977  0.06545  0.05746  0.07249  0.07118  0.00000  0.02941  2.29882  -0.0002  0        0.12258  0.06897  0.06432  0.06209 
+0.10023  0.10377  0.12374  0.14150  0.12581  0.11749  11.5486  0.02401  2.29143  0.00008  2000     0.09722  0.12478  0.12950  0.00356 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  0.02968  2.28607  -0.0000  0        0.12329  0.09757  0.09219  0.06241 
+0.09901  0.09691  0.20111  0.18610  0.18739  0.18096  11.5486  0.02397  2.28926  0.00005  2000     0.09718  0.19425  0.18353  0.00360 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  0.02934  2.27353  0.00034  0        0.12226  0.09976  0.09648  0.05428 
+0.16947  0.16466  0.21342  0.20154  0.21243  0.20068  11.5486  0.02391  2.28106  0.00003  2000     0.09714  0.21292  0.20111  0.00403 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  0.04082  2.39954  0.01111  0        0.12156  0.10008  0.10806  0.05281 
+0.10984  0.10548  0.20805  0.21783  0.20070  0.21097  11.5486  0.02390  2.28712  -0.0000  2000     0.09713  0.20438  0.21440  0.00400 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  0.03163  2.34194  0.00275  0        0.12185  0.10360  0.08790  0.04895 
+0.10068  0.10377  0.21306  0.19211  0.20670  0.20154  11.5486  0.02393  2.28827  0.00002  2000     0.09704  0.20988  0.19682  0.00354 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:     0.10   irm_lambda:   100.00 val acc: 18.51 +- 2.95 test acc: 11.59 +- 2.71
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12251  0.11063  0.06225  0.05746  0.06956  0.06775  0.00000  0.00895  2.29882  -0.0002  0        0.12169  0.06590  0.06260  0.06209 
+0.11773  0.11835  0.21144  0.21269  0.20350  0.19382  11.5486  0.00356  2.29959  0.00004  2000     0.09703  0.20747  0.20325  0.00338 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  0.00933  2.28607  -0.0000  0        0.12243  0.09757  0.09219  0.06241 
+0.09685  0.10120  0.21707  0.20154  0.20314  0.19554  11.5486  0.00355  2.29881  0.00002  2000     0.09711  0.21011  0.19854  0.00341 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  0.00911  2.27353  0.00034  0        0.12289  0.09976  0.09648  0.05428 
+0.12883  0.11063  0.28312  0.25385  0.26706  0.26072  11.5486  0.00354  2.29726  0.00001  2000     0.09706  0.27509  0.25729  0.00335 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  0.01956  2.39954  0.01111  0        0.12285  0.10008  0.10806  0.05281 
+0.10984  0.10548  0.21238  0.22126  0.20444  0.21698  11.5486  0.00354  2.29870  0.00000  2000     0.09699  0.20841  0.21912  0.00350 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  0.01081  2.34194  0.00275  0        0.12146  0.10360  0.08790  0.04895 
+0.11264  0.12693  0.32918  0.32247  0.30761  0.30446  11.5486  0.00351  2.29939  0.00000  2000     0.09702  0.31840  0.31346  0.00318 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:     0.10   irm_lambda:  1000.00 val acc: 23.83 +- 4.29 test acc: 11.32 +- 1.04
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  8.50859  2.29882  -0.0002  0        0.12178  0.11241  0.10548  0.06209 
+0.13131  0.13293  0.99977  1.00000  0.91361  0.90566  11.5486  0.63479  0.38837  0.20355  2000     0.09704  0.95669  0.95283  0.00243 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09802  0.09777  0.09766  0.09176  0.09753  0.09262  0.00000  8.52826  2.28607  -0.0000  0        0.12423  0.09760  0.09219  0.06241 
+0.12960  0.12349  0.99977  1.00000  0.91212  0.91080  11.5486  0.66567  0.41681  0.20257  2000     0.09700  0.95594  0.95540  0.00245 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08891  0.08833  0.10484  0.10634  0.10565  0.10034  0.00000  7.70305  2.27353  0.00034  0        0.12162  0.10524  0.10334  0.05428 
+0.13794  0.12864  0.99968  1.00000  0.91288  0.91423  11.5486  0.66699  0.41891  0.20527  2000     0.09695  0.95628  0.95711  0.00245 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10294  0.09777  0.09775  0.10291  0.10208  0.11235  0.00000  7.68160  2.39954  0.01111  0        0.12088  0.09992  0.10763  0.05281 
+0.13032  0.13550  0.99959  0.99914  0.91374  0.90051  11.5486  0.64464  0.39556  0.20325  2000     0.09691  0.95667  0.94982  0.00246 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  7.23861  2.34194  0.00275  0        0.12154  0.10360  0.08790  0.04895 
+0.13578  0.13550  0.99968  1.00000  0.91297  0.91166  11.5486  0.67344  0.41899  0.20908  2000     0.09691  0.95633  0.95583  0.00251 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:   100.00   irm_lambda:     0.01 val acc: 95.42 +- 0.26 test acc: 13.30 +- 0.33
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  8.50857  2.29882  -0.0002  0        0.12167  0.11241  0.10548  0.06209 
+0.12775  0.12693  0.99972  1.00000  0.91334  0.90480  11.5486  0.65248  0.38218  0.16381  2000     0.09696  0.95653  0.95240  0.00253 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09802  0.09777  0.09766  0.09176  0.09753  0.09262  0.00000  8.52825  2.28607  -0.0000  0        0.12175  0.09760  0.09219  0.06241 
+0.12919  0.12264  0.99977  1.00000  0.91203  0.91080  11.5486  0.68367  0.41035  0.16540  2000     0.09692  0.95590  0.95540  0.00255 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08891  0.08833  0.10484  0.10634  0.10574  0.10034  0.00000  7.70308  2.27353  0.00034  0        0.12143  0.10529  0.10334  0.05428 
+0.13451  0.12693  0.99968  1.00000  0.91279  0.91509  11.5486  0.68438  0.41205  0.16663  2000     0.09692  0.95624  0.95754  0.00254 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10280  0.09777  0.09775  0.10291  0.10208  0.11235  0.00000  7.68260  2.39954  0.01111  0        0.12268  0.09992  0.10763  0.05281 
+0.12743  0.13207  0.99954  0.99914  0.91320  0.89965  11.5486  0.66240  0.38953  0.16403  2000     0.09691  0.95637  0.94940  0.00255 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  7.23886  2.34194  0.00275  0        0.12162  0.10360  0.08790  0.04895 
+0.13569  0.13293  0.99972  1.00000  0.91297  0.91252  11.5486  0.69278  0.41318  0.17029  2000     0.09696  0.95635  0.95626  0.00261 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:   100.00   irm_lambda:     0.10 val acc: 95.42 +- 0.29 test acc: 13.09 +- 0.35
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  6.23231  2.29882  -0.0002  0        0.12123  0.11241  0.10548  0.06209 
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  11.5486  0.04633  2.30108  0.00000  2000     0.09694  0.11241  0.10548  0.00022 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  6.26477  2.28607  -0.0000  0        0.12144  0.09757  0.09219  0.06241 
+0.11273  0.10634  0.11440  0.12006  0.10930  0.13293  11.5486  0.04781  2.30174  0.00000  2000     0.09695  0.11185  0.12650  0.00024 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08981  0.08919  0.10466  0.10463  0.10551  0.10034  0.00000  5.45236  2.27353  0.00034  0        0.11978  0.10508  0.10248  0.05428 
+0.11318  0.12349  0.11296  0.11149  0.11120  0.10720  11.5486  0.04698  2.30125  0.00001  2000     0.09699  0.11208  0.10934  0.00023 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10461  0.10548  0.09775  0.10291  0.10245  0.11320  0.00000  5.31670  2.39954  0.01111  0        0.12118  0.10010  0.10806  0.05281 
+0.11155  0.11063  0.11151  0.11835  0.11399  0.11835  11.5486  0.04951  2.30164  0.00001  2000     0.09694  0.11275  0.11835  0.00025 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  4.92255  2.34194  0.00275  0        0.12135  0.10360  0.08790  0.04895 
+0.11119  0.13207  0.11359  0.10034  0.11165  0.12693  11.5486  0.04928  2.30137  0.00000  2000     0.09698  0.11262  0.11363  0.00025 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:   100.00   irm_lambda:   100.00 val acc: 11.47 +- 0.73 test acc: 11.26 +- 0.11
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  6.21184  2.29882  -0.0002  0        0.12149  0.11241  0.10548  0.06209 
+0.09879  0.10377  0.09672  0.10720  0.10245  0.09090  11.5486  0.02584  2.30242  0.00000  2000     0.09714  0.09958  0.09905  0.00022 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  6.24442  2.28607  -0.0000  0        0.12154  0.09757  0.09219  0.06241 
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  11.5486  0.02733  2.30290  0.00000  2000     0.09720  0.09757  0.09219  0.00024 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08981  0.08919  0.10466  0.10463  0.10551  0.10034  0.00000  5.43212  2.27353  0.00034  0        0.12157  0.10508  0.10248  0.05428 
+0.10618  0.10377  0.08675  0.08919  0.08652  0.08490  11.5486  0.02650  2.30229  0.00001  2000     0.09692  0.08663  0.08705  0.00023 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10474  0.10548  0.09775  0.10291  0.10245  0.11320  0.00000  5.29543  2.39954  0.01111  0        0.12112  0.10010  0.10806  0.05281 
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  11.5486  0.02906  2.30271  0.00001  2000     0.09688  0.10008  0.10806  0.00025 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  4.90173  2.34194  0.00275  0        0.12114  0.10360  0.08790  0.04895 
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  11.5486  0.02880  2.30244  0.00000  2000     0.09694  0.10360  0.08790  0.00025 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:   100.00   irm_lambda:  1000.00 val acc: 9.92 +- 0.78 test acc: 10.14 +- 0.80
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10894  0.10634  0.00460  0.00257  0.01452  0.01629  0.00000  64.3905  2.29882  -0.0002  0        0.12115  0.00956  0.00943  0.06209 
+0.18860  0.19039  0.49393  0.49142  0.46461  0.44940  11.5486  2.50327  2.06727  0.04954  2000     0.09694  0.47927  0.47041  0.00043 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11033  0.10634  0.19267  0.19639  0.18153  0.19725  0.00000  64.7002  2.28607  -0.0000  0        0.12148  0.18710  0.19682  0.06241 
+0.18801  0.20240  0.39775  0.42538  0.36179  0.41080  11.5486  2.59304  2.17855  0.01746  2000     0.09694  0.37977  0.41809  0.00041 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09631  0.09434  0.09906  0.10634  0.09658  0.09090  0.00000  56.5590  2.27353  0.00034  0        0.12144  0.09782  0.09862  0.05428 
+0.18788  0.19554  0.53241  0.54459  0.49731  0.48970  11.5486  2.40930  2.03162  0.06202  2000     0.09706  0.51486  0.51715  0.00037 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11489  0.10720  0.10497  0.10720  0.10438  0.10034  0.00000  55.2120  2.39954  0.01111  0        0.12096  0.10468  0.10377  0.05281 
+0.18968  0.19554  0.75120  0.75471  0.70131  0.69296  11.5486  2.48904  2.05081  0.06540  2000     0.09698  0.72626  0.72384  0.00043 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09288  0.09691  0.19745  0.21955  0.18902  0.16895  0.00000  51.3009  2.34194  0.00275  0        0.12155  0.19323  0.19425  0.04895 
+0.15116  0.15780  0.74827  0.71526  0.68859  0.69982  11.5486  2.43338  2.06952  0.05785  2000     0.09801  0.71843  0.70754  0.00036 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:  1000.00   irm_lambda:     0.01 val acc: 56.74 +- 12.52 test acc: 18.11 +- 1.50
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10885  0.10634  0.00460  0.00257  0.01452  0.01629  0.00000  64.3905  2.29882  -0.0002  0        0.12305  0.00956  0.00943  0.06209 
+0.18747  0.18524  0.47909  0.46741  0.45130  0.42967  11.5486  2.51675  2.08809  0.04101  2000     0.09778  0.46519  0.44854  0.00042 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11033  0.10634  0.19271  0.19639  0.18171  0.19725  0.00000  64.7002  2.28607  -0.0000  0        0.12105  0.18721  0.19682  0.06241 
+0.18296  0.19125  0.49916  0.50257  0.45658  0.48799  11.5486  2.59780  2.19648  0.01340  2000     0.09763  0.47787  0.49528  0.00039 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09635  0.09434  0.09906  0.10634  0.09658  0.09090  0.00000  56.5590  2.27353  0.00034  0        0.12116  0.09782  0.09862  0.05428 
+0.22180  0.20497  0.69161  0.70840  0.64938  0.65952  11.5486  2.41152  2.02678  0.07124  2000     0.09754  0.67050  0.68396  0.00037 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11489  0.10720  0.10511  0.10720  0.10448  0.10034  0.00000  55.2130  2.39954  0.01111  0        0.12099  0.10479  0.10377  0.05281 
+0.17051  0.17495  0.70131  0.69554  0.65304  0.64751  11.5486  2.49186  2.05734  0.06316  2000     0.09757  0.67717  0.67152  0.00042 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09279  0.09691  0.19745  0.21955  0.18902  0.16895  0.00000  51.3011  2.34194  0.00275  0        0.12091  0.19323  0.19425  0.04895 
+0.15752  0.15694  0.68777  0.64322  0.64158  0.63722  11.5486  2.44490  2.08880  0.04668  2000     0.09754  0.66468  0.64022  0.00035 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:  1000.00   irm_lambda:     0.10 val acc: 58.79 +- 9.69 test acc: 18.41 +- 2.16
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11070  0.11149  0.00036  0.00000  0.01091  0.01629  0.00000  62.1142  2.29882  -0.0002  0        0.12150  0.00563  0.00814  0.06209 
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  11.5486  0.36127  2.30144  0.00000  2000     0.09755  0.11241  0.10548  0.00033 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10677  0.10291  0.19709  0.19468  0.18171  0.19382  0.00000  62.4367  2.28607  -0.0000  0        0.12110  0.18940  0.19425  0.06241 
+0.11273  0.10634  0.11440  0.12006  0.10930  0.13293  11.5486  0.36455  2.30203  0.00000  2000     0.09764  0.11185  0.12650  0.00034 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09613  0.09348  0.09906  0.10634  0.09631  0.09005  0.00000  54.3083  2.27353  0.00034  0        0.12091  0.09769  0.09819  0.05428 
+0.11318  0.12349  0.11296  0.11149  0.11120  0.10720  11.5486  0.28734  2.30168  0.00000  2000     0.09767  0.11208  0.10934  0.00026 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11426  0.10806  0.10448  0.10720  0.10425  0.10034  0.00000  52.8471  2.39954  0.01111  0        0.12144  0.10436  0.10377  0.05281 
+0.11155  0.11063  0.11151  0.11835  0.11399  0.11835  11.5486  0.35118  2.30182  0.00002  2000     0.09764  0.11275  0.11835  0.00032 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09477  0.09519  0.19736  0.21955  0.18929  0.16895  0.00000  48.9848  2.34194  0.00275  0        0.12125  0.19332  0.19425  0.04895 
+0.11119  0.13207  0.11359  0.10034  0.11165  0.12693  11.5486  0.28522  2.30141  0.00000  2000     0.09761  0.11262  0.11363  0.00026 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:  1000.00   irm_lambda:   100.00 val acc: 14.43 +- 4.10 test acc: 10.81 +- 0.71
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11065  0.11235  0.00036  0.00000  0.01096  0.01629  0.00000  62.0938  2.29882  -0.0002  0        0.12147  0.00566  0.00814  0.06209 
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  11.5486  0.34081  2.30236  0.00000  2000     0.09769  0.11241  0.10548  0.00033 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10673  0.10291  0.19714  0.19554  0.18220  0.19554  0.00000  62.4164  2.28607  -0.0000  0        0.12135  0.18967  0.19554  0.06241 
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  11.5486  0.36587  2.30299  0.00000  2000     0.09767  0.09757  0.09219  0.00036 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09613  0.09348  0.09906  0.10634  0.09631  0.09005  0.00000  54.2881  2.27353  0.00034  0        0.12090  0.09769  0.09819  0.05428 
+0.11773  0.12435  0.11738  0.11749  0.11634  0.11320  11.5486  0.26725  2.30246  0.00000  2000     0.09761  0.11686  0.11535  0.00026 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11430  0.10806  0.10448  0.10720  0.10425  0.10034  0.00000  52.8258  2.39954  0.01111  0        0.12093  0.10436  0.10377  0.05281 
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  11.5486  0.32091  2.30282  0.00002  2000     0.09758  0.10008  0.10806  0.00031 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09477  0.09519  0.19736  0.21955  0.18929  0.16895  0.00000  48.9640  2.34194  0.00275  0        0.12121  0.19332  0.19425  0.04895 
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  11.5486  0.26218  2.30225  0.00000  2000     0.09761  0.10360  0.08790  0.00025 
+RRRRRRR mmd_lambda:     0.01 ib_lambda:  1000.00   irm_lambda:  1000.00 val acc: 14.37 +- 4.19 test acc: 10.77 +- 0.80
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14854  0.12607  0.25826  0.23756  0.24735  0.23499  0.00000  2.30608  2.29882  -0.0002  0        0.12083  0.25280  0.23627  0.06209 
+0.64047  0.62006  0.99878  0.99914  0.96882  0.95969  11.5486  0.11121  0.10074  0.00769  2000     0.09754  0.98380  0.97941  0.15101 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09793  0.09691  0.09888  0.09176  0.09866  0.09262  0.00000  2.29528  2.28607  -0.0000  0        0.12066  0.09877  0.09219  0.06241 
+0.61336  0.60634  0.99882  0.99828  0.96517  0.95711  11.5486  0.11729  0.10672  0.00841  2000     0.09757  0.98200  0.97770  0.15421 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10023  0.09948  0.10019  0.10120  0.09929  0.09176  0.00000  2.28480  2.27353  0.00034  0        0.12061  0.09974  0.09648  0.05428 
+0.60709  0.57976  0.99891  0.99828  0.96210  0.95111  11.5486  0.12216  0.11154  0.00829  2000     0.09753  0.98051  0.97470  0.15785 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  2.40804  2.39954  0.01111  0        0.12141  0.10008  0.10806  0.05281 
+0.60077  0.61149  0.99878  1.00000  0.96404  0.95197  11.5486  0.11741  0.10691  0.00804  2000     0.09754  0.98141  0.97598  0.15285 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  2.35073  2.34194  0.00275  0        0.12073  0.10360  0.08790  0.04895 
+0.61011  0.61835  0.99846  0.99828  0.96526  0.95883  11.5486  0.11790  0.10727  0.00811  2000     0.09759  0.98186  0.97855  0.16126 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:     0.01   irm_lambda:     0.01 val acc: 97.73 +- 0.17 test acc: 61.44 +- 1.37
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14854  0.12693  0.25921  0.23842  0.24825  0.23499  0.00000  2.30606  2.29882  -0.0002  0        0.12099  0.25373  0.23670  0.06209 
+0.63993  0.62264  0.99873  0.99914  0.96833  0.95969  11.5486  0.11264  0.10149  0.00756  2000     0.09754  0.98353  0.97941  0.15117 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09793  0.09691  0.09888  0.09176  0.09861  0.09262  0.00000  2.29527  2.28607  -0.0000  0        0.12112  0.09875  0.09219  0.06241 
+0.61006  0.60034  0.99887  0.99828  0.96499  0.95797  11.5486  0.11760  0.10631  0.00808  2000     0.09757  0.98193  0.97813  0.15486 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.09948  0.10019  0.10120  0.09929  0.09176  0.00000  2.28483  2.27353  0.00034  0        0.12146  0.09974  0.09648  0.05428 
+0.60650  0.57118  0.99887  0.99914  0.96210  0.95283  11.5486  0.12190  0.11057  0.00797  2000     0.09760  0.98048  0.97598  0.15765 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  2.40904  2.39954  0.01111  0        0.12338  0.10008  0.10806  0.05281 
+0.59658  0.61320  0.99900  0.99914  0.96386  0.95111  11.5486  0.11822  0.10700  0.00791  2000     0.09762  0.98143  0.97512  0.15329 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  2.35098  2.34194  0.00275  0        0.11075  0.10360  0.08790  0.04895 
+0.61642  0.61235  0.99842  0.99828  0.96607  0.95797  11.5486  0.11740  0.10608  0.00787  2000     0.09722  0.98224  0.97813  0.16061 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:     0.01   irm_lambda:     0.10 val acc: 97.74 +- 0.16 test acc: 61.39 +- 1.45
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12202  0.10977  0.06284  0.05917  0.06924  0.06861  0.00000  0.02980  2.29882  -0.0002  0        0.12141  0.06604  0.06389  0.06209 
+0.14146  0.13807  0.38877  0.36964  0.36698  0.33705  11.5486  0.02945  1.90155  0.00097  2000     0.09755  0.37788  0.35334  0.07791 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  0.03179  2.28607  -0.0000  0        0.12061  0.09757  0.09219  0.06241 
+0.09802  0.10463  0.77908  0.75643  0.71417  0.69039  11.5486  0.02210  1.98981  -0.0074  2000     0.09767  0.74662  0.72341  0.08123 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  0.03411  2.27353  0.00034  0        0.12080  0.09976  0.09648  0.05428 
+0.16050  0.13464  0.86141  0.85763  0.78950  0.80017  11.5486  -0.0060  1.78257  -0.0339  2000     0.09766  0.82546  0.82890  0.09822 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  0.04314  2.39954  0.01111  0        0.12139  0.10008  0.10806  0.05281 
+0.11318  0.11063  0.44778  0.43996  0.41692  0.45454  11.5486  0.02946  2.02034  -0.0000  2000     0.09763  0.43235  0.44725  0.05825 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  0.03467  2.34194  0.00275  0        0.12109  0.10360  0.08790  0.04895 
+0.14899  0.16380  0.80024  0.80874  0.73496  0.73070  11.5486  0.02166  1.97879  -0.0078  2000     0.09754  0.76760  0.76972  0.08819 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:     0.01   irm_lambda:   100.00 val acc: 62.45 +- 18.85 test acc: 13.24 +- 2.32
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12125  0.11149  0.05972  0.05574  0.06672  0.06775  0.00000  0.00934  2.29882  -0.0002  0        0.12033  0.06322  0.06175  0.06209 
+0.12116  0.10548  0.31569  0.31389  0.29525  0.29245  11.5486  0.01141  2.27155  0.00003  2000     0.09761  0.30547  0.30317  0.02197 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  0.01144  2.28607  -0.0000  0        0.12044  0.09757  0.09219  0.06241 
+0.10578  0.11492  0.67618  0.66552  0.61817  0.59777  11.5486  0.00924  2.23741  -0.0023  2000     0.09765  0.64717  0.63164  0.03860 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  0.01388  2.27353  0.00034  0        0.12126  0.09976  0.09648  0.05428 
+0.15409  0.13121  0.87639  0.87307  0.80286  0.80960  11.5486  -0.0281  1.93824  -0.0399  2000     0.09762  0.83962  0.84133  0.09378 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  0.02187  2.39954  0.01111  0        0.12133  0.10008  0.10806  0.05281 
+0.11282  0.10806  0.30734  0.31732  0.28975  0.28044  11.5486  0.01115  2.26884  -0.0002  2000     0.09765  0.29855  0.29888  0.02367 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  0.01385  2.34194  0.00275  0        0.12134  0.10360  0.08790  0.04895 
+0.15802  0.16552  0.88690  0.87735  0.81120  0.82075  11.5486  -0.0051  1.98147  -0.0168  2000     0.09762  0.84905  0.84905  0.07646 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:     0.01   irm_lambda:  1000.00 val acc: 58.48 +- 24.45 test acc: 13.04 +- 2.16
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14841  0.12607  0.25565  0.23670  0.24509  0.23241  0.00000  2.31167  2.29882  -0.0002  0        0.12134  0.25037  0.23456  0.06209 
+0.65684  0.63293  0.99887  0.99914  0.96959  0.96397  11.5486  0.11711  0.09786  0.00806  2000     0.09759  0.98423  0.98156  0.10287 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09793  0.09691  0.09888  0.09176  0.09838  0.09262  0.00000  2.30090  2.28607  -0.0000  0        0.12061  0.09863  0.09219  0.06241 
+0.63118  0.62950  0.99900  0.99828  0.96630  0.95883  11.5486  0.12297  0.10361  0.00878  2000     0.09763  0.98265  0.97855  0.10331 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  2.28969  2.27353  0.00034  0        0.12090  0.09976  0.09648  0.05428 
+0.63794  0.61235  0.99905  0.99914  0.96526  0.95711  11.5486  0.12550  0.10577  0.00847  2000     0.09764  0.98215  0.97813  0.10684 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  2.41279  2.39954  0.01111  0        0.12141  0.10008  0.10806  0.05281 
+0.62220  0.62864  0.99891  1.00000  0.96625  0.95368  11.5486  0.12224  0.10287  0.00833  2000     0.09759  0.98258  0.97684  0.10397 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  2.35514  2.34194  0.00275  0        0.12110  0.10360  0.08790  0.04895 
+0.63388  0.62693  0.99855  0.99742  0.96738  0.96054  11.5486  0.12317  0.10337  0.00855  2000     0.09758  0.98297  0.97898  0.10786 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:     0.10   irm_lambda:     0.01 val acc: 97.88 +- 0.15 test acc: 63.64 +- 1.15
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14850  0.12607  0.25641  0.23670  0.24568  0.23241  0.00000  2.31165  2.29882  -0.0002  0        0.12108  0.25104  0.23456  0.06209 
+0.65644  0.63550  0.99887  0.99914  0.96982  0.96054  11.5486  0.11776  0.09778  0.00779  2000     0.09763  0.98434  0.97984  0.10314 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09793  0.09691  0.09888  0.09176  0.09829  0.09262  0.00000  2.30089  2.28607  -0.0000  0        0.12148  0.09859  0.09219  0.06241 
+0.62856  0.61835  0.99896  0.99828  0.96567  0.96054  11.5486  0.12467  0.10442  0.00849  2000     0.09750  0.98231  0.97941  0.10466 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  2.28972  2.27353  0.00034  0        0.12122  0.09976  0.09648  0.05428 
+0.63420  0.60548  0.99918  0.99828  0.96476  0.95540  11.5486  0.12645  0.10590  0.00818  2000     0.09765  0.98197  0.97684  0.10774 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  2.41379  2.39954  0.01111  0        0.12126  0.10008  0.10806  0.05281 
+0.61647  0.62435  0.99882  1.00000  0.96594  0.95368  11.5486  0.12440  0.10410  0.00807  2000     0.09773  0.98238  0.97684  0.10598 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  2.35538  2.34194  0.00275  0        0.12142  0.10360  0.08790  0.04895 
+0.63343  0.62950  0.99869  0.99828  0.96729  0.96226  11.5486  0.12252  0.10214  0.00821  2000     0.09767  0.98299  0.98027  0.10636 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:     0.10   irm_lambda:     0.10 val acc: 97.86 +- 0.15 test acc: 63.38 +- 1.30
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12315  0.10977  0.06545  0.05746  0.07249  0.07118  0.00000  0.03539  2.29882  -0.0002  0        0.12069  0.06897  0.06432  0.06209 
+0.10091  0.10548  0.13041  0.14408  0.13168  0.12264  11.5486  0.03201  2.29150  0.00008  2000     0.09766  0.13105  0.13336  0.00355 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  0.03741  2.28607  -0.0000  0        0.12144  0.09757  0.09219  0.06241 
+0.09901  0.09777  0.20129  0.18610  0.18798  0.18181  11.5486  0.03202  2.28928  0.00005  2000     0.09758  0.19463  0.18396  0.00359 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  0.03900  2.27353  0.00034  0        0.12096  0.09976  0.09648  0.05428 
+0.17002  0.16295  0.21338  0.20154  0.21256  0.20154  11.5486  0.03197  2.28099  0.00003  2000     0.09758  0.21297  0.20154  0.00403 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  0.04789  2.39954  0.01111  0        0.12110  0.10008  0.10806  0.05281 
+0.11015  0.10463  0.20823  0.21698  0.20133  0.21183  11.5486  0.03190  2.28712  -0.0000  2000     0.09760  0.20478  0.21440  0.00399 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  0.03908  2.34194  0.00275  0        0.12114  0.10360  0.08790  0.04895 
+0.10073  0.10291  0.21234  0.18867  0.20598  0.20068  11.5486  0.03196  2.28827  0.00002  2000     0.09761  0.20916  0.19468  0.00353 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:     0.10   irm_lambda:   100.00 val acc: 18.56 +- 2.79 test acc: 11.62 +- 2.72
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12251  0.11063  0.06225  0.05746  0.06956  0.06775  0.00000  0.01493  2.29882  -0.0002  0        0.12099  0.06590  0.06260  0.06209 
+0.11665  0.12006  0.20977  0.21183  0.20205  0.19468  11.5486  0.01156  2.29959  0.00004  2000     0.09757  0.20591  0.20325  0.00338 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  0.01706  2.28607  -0.0000  0        0.12053  0.09757  0.09219  0.06241 
+0.09680  0.09948  0.21635  0.19811  0.20255  0.19554  11.5486  0.01160  2.29883  0.00002  2000     0.09762  0.20945  0.19682  0.00342 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  0.01876  2.27353  0.00034  0        0.12093  0.09976  0.09648  0.05428 
+0.12838  0.11149  0.28258  0.25557  0.26719  0.25814  11.5486  0.01160  2.29723  0.00001  2000     0.09757  0.27489  0.25686  0.00335 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  0.02663  2.39954  0.01111  0        0.12077  0.10008  0.10806  0.05281 
+0.10952  0.10634  0.21324  0.22212  0.20480  0.21698  11.5486  0.01154  2.29870  0.00000  2000     0.09755  0.20902  0.21955  0.00350 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  0.01825  2.34194  0.00275  0        0.12105  0.10360  0.08790  0.04895 
+0.11295  0.12521  0.32706  0.31989  0.30495  0.30446  11.5486  0.01154  2.29941  0.00000  2000     0.09758  0.31601  0.31217  0.00317 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:     0.10   irm_lambda:  1000.00 val acc: 23.77 +- 4.27 test acc: 11.29 +- 1.02
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  8.51457  2.29882  -0.0002  0        0.12078  0.11241  0.10548  0.06209 
+0.13158  0.13036  0.99968  1.00000  0.91365  0.90651  11.5486  0.64297  0.38860  0.20372  2000     0.09756  0.95667  0.95325  0.00243 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09802  0.09777  0.09766  0.09176  0.09753  0.09262  0.00000  8.53599  2.28607  -0.0000  0        0.12106  0.09760  0.09219  0.06241 
+0.13045  0.12435  0.99977  1.00000  0.91221  0.91080  11.5486  0.67337  0.41639  0.20261  2000     0.09756  0.95599  0.95540  0.00246 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08891  0.08833  0.10484  0.10634  0.10565  0.10034  0.00000  7.71270  2.27353  0.00034  0        0.12125  0.10524  0.10334  0.05428 
+0.13853  0.12864  0.99972  1.00000  0.91297  0.91509  11.5486  0.67516  0.41875  0.20533  2000     0.09760  0.95635  0.95754  0.00245 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10294  0.09777  0.09775  0.10291  0.10208  0.11235  0.00000  7.68867  2.39954  0.01111  0        0.12159  0.09992  0.10763  0.05281 
+0.13009  0.13464  0.99963  0.99914  0.91365  0.90051  11.5486  0.65278  0.39572  0.20320  2000     0.09853  0.95664  0.94982  0.00246 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  7.24605  2.34194  0.00275  0        0.12070  0.10360  0.08790  0.04895 
+0.13573  0.13550  0.99968  1.00000  0.91302  0.91166  11.5486  0.68145  0.41898  0.20907  2000     0.09761  0.95635  0.95583  0.00251 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:   100.00   irm_lambda:     0.01 val acc: 95.44 +- 0.27 test acc: 13.33 +- 0.33
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  8.51455  2.29882  -0.0002  0        0.12101  0.11241  0.10548  0.06209 
+0.13032  0.12950  0.99968  1.00000  0.91356  0.90566  11.5486  0.66089  0.38236  0.16399  2000     0.09762  0.95662  0.95283  0.00253 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09802  0.09777  0.09766  0.09176  0.09753  0.09262  0.00000  8.53598  2.28607  -0.0000  0        0.12079  0.09760  0.09219  0.06241 
+0.12919  0.12435  0.99977  1.00000  0.91198  0.91080  11.5486  0.69097  0.40970  0.16527  2000     0.09761  0.95588  0.95540  0.00255 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08891  0.08833  0.10484  0.10634  0.10574  0.10034  0.00000  7.71273  2.27353  0.00034  0        0.12078  0.10529  0.10334  0.05428 
+0.13447  0.12693  0.99968  1.00000  0.91275  0.91423  11.5486  0.69236  0.41194  0.16669  2000     0.09762  0.95621  0.95711  0.00254 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10280  0.09777  0.09775  0.10291  0.10208  0.11235  0.00000  7.68967  2.39954  0.01111  0        0.12012  0.09992  0.10763  0.05281 
+0.12703  0.13207  0.99954  0.99914  0.91320  0.89879  11.5486  0.67049  0.38960  0.16402  2000     0.09762  0.95637  0.94897  0.00255 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  7.24630  2.34194  0.00275  0        0.12167  0.10360  0.08790  0.04895 
+0.13582  0.13293  0.99977  1.00000  0.91293  0.91337  11.5486  0.70035  0.41288  0.17025  2000     0.09761  0.95635  0.95669  0.00261 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:   100.00   irm_lambda:     0.10 val acc: 95.42 +- 0.30 test acc: 13.14 +- 0.33
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  6.23829  2.29882  -0.0002  0        0.12129  0.11241  0.10548  0.06209 
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  11.5486  0.05432  2.30108  0.00000  2000     0.09764  0.11241  0.10548  0.00022 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  6.27250  2.28607  -0.0000  0        0.12118  0.09757  0.09219  0.06241 
+0.11273  0.10634  0.11440  0.12006  0.10930  0.13293  11.5486  0.05585  2.30174  0.00000  2000     0.09757  0.11185  0.12650  0.00024 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08981  0.08919  0.10466  0.10463  0.10551  0.10034  0.00000  5.46201  2.27353  0.00034  0        0.12105  0.10508  0.10248  0.05428 
+0.11318  0.12349  0.11296  0.11149  0.11120  0.10720  11.5486  0.05504  2.30125  0.00001  2000     0.09780  0.11208  0.10934  0.00023 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10461  0.10548  0.09775  0.10291  0.10245  0.11320  0.00000  5.32376  2.39954  0.01111  0        0.12095  0.10010  0.10806  0.05281 
+0.11155  0.11063  0.11151  0.11835  0.11399  0.11835  11.5486  0.05751  2.30164  0.00001  2000     0.09772  0.11275  0.11835  0.00025 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  4.93000  2.34194  0.00275  0        0.12114  0.10360  0.08790  0.04895 
+0.11119  0.13207  0.11359  0.10034  0.11165  0.12693  11.5486  0.05731  2.30137  0.00000  2000     0.09763  0.11262  0.11363  0.00025 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:   100.00   irm_lambda:   100.00 val acc: 11.47 +- 0.73 test acc: 11.26 +- 0.11
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  6.21782  2.29882  -0.0002  0        0.12092  0.11241  0.10548  0.06209 
+0.09879  0.10377  0.09672  0.10720  0.10245  0.09090  11.5486  0.03384  2.30242  0.00000  2000     0.09756  0.09958  0.09905  0.00022 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  6.25215  2.28607  -0.0000  0        0.12101  0.09757  0.09219  0.06241 
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  11.5486  0.03537  2.30290  0.00000  2000     0.09751  0.09757  0.09219  0.00024 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08981  0.08919  0.10466  0.10463  0.10551  0.10034  0.00000  5.44178  2.27353  0.00034  0        0.12090  0.10508  0.10248  0.05428 
+0.10564  0.10291  0.08675  0.08747  0.08652  0.08404  11.5486  0.03456  2.30229  0.00001  2000     0.09761  0.08663  0.08576  0.00023 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10474  0.10548  0.09775  0.10291  0.10245  0.11320  0.00000  5.30250  2.39954  0.01111  0        0.12060  0.10010  0.10806  0.05281 
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  11.5486  0.03707  2.30271  0.00001  2000     0.09746  0.10008  0.10806  0.00025 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  4.90917  2.34194  0.00275  0        0.10844  0.10360  0.08790  0.04895 
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  11.5486  0.03683  2.30243  0.00000  2000     0.09757  0.10360  0.08790  0.00025 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:   100.00   irm_lambda:  1000.00 val acc: 9.92 +- 0.78 test acc: 10.14 +- 0.80
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10894  0.10634  0.00460  0.00257  0.01452  0.01629  0.00000  64.3965  2.29882  -0.0002  0        0.12041  0.00956  0.00943  0.06209 
+0.18783  0.18953  0.50191  0.49228  0.47286  0.45540  11.5486  2.51130  2.06776  0.04880  2000     0.09763  0.48739  0.47384  0.00043 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11033  0.10634  0.19267  0.19639  0.18153  0.19725  0.00000  64.7079  2.28607  -0.0000  0        0.12295  0.18710  0.19682  0.06241 
+0.17845  0.18096  0.49912  0.50000  0.46163  0.46998  11.5486  2.57226  2.15257  0.02490  2000     0.09763  0.48037  0.48499  0.00041 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09631  0.09434  0.09906  0.10634  0.09658  0.09090  0.00000  56.5686  2.27353  0.00034  0        0.12187  0.09782  0.09862  0.05428 
+0.20940  0.21183  0.60251  0.61149  0.55754  0.55574  11.5486  2.40675  2.01360  0.07135  2000     0.09764  0.58002  0.58361  0.00038 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11489  0.10720  0.10497  0.10720  0.10438  0.10034  0.00000  55.2190  2.39954  0.01111  0        0.12103  0.10468  0.10377  0.05281 
+0.19216  0.19039  0.74498  0.74871  0.69811  0.69982  11.5486  2.49733  2.04812  0.06722  2000     0.09762  0.72154  0.72427  0.00044 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09288  0.09691  0.19745  0.21955  0.18902  0.16895  0.00000  51.3083  2.34194  0.00275  0        0.12152  0.19323  0.19425  0.04895 
+0.14453  0.15351  0.70821  0.66981  0.65507  0.65694  11.5486  2.43372  2.05817  0.06198  2000     0.09755  0.68164  0.66337  0.00036 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:  1000.00   irm_lambda:     0.01 val acc: 58.60 +- 9.79 test acc: 18.25 +- 2.15
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10885  0.10634  0.00460  0.00257  0.01452  0.01629  0.00000  64.3965  2.29882  -0.0002  0        0.12138  0.00956  0.00943  0.06209 
+0.18684  0.18782  0.48346  0.47684  0.45567  0.43567  11.5486  2.52254  2.08371  0.04308  2000     0.09758  0.46957  0.45626  0.00042 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11033  0.10634  0.19271  0.19639  0.18171  0.19725  0.00000  64.7079  2.28607  -0.0000  0        0.12126  0.18721  0.19682  0.06241 
+0.17574  0.16723  0.29471  0.28816  0.27522  0.28816  11.5486  2.58720  2.17485  0.01757  2000     0.09758  0.28497  0.28816  0.00040 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09635  0.09434  0.09906  0.10634  0.09658  0.09090  0.00000  56.5687  2.27353  0.00034  0        0.12133  0.09782  0.09862  0.05428 
+0.23921  0.24271  0.71651  0.74013  0.66892  0.68181  11.5486  2.44790  2.07578  0.05195  2000     0.09762  0.69271  0.71097  0.00035 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11489  0.10720  0.10511  0.10720  0.10448  0.10034  0.00000  55.2200  2.39954  0.01111  0        0.12087  0.10479  0.10377  0.05281 
+0.18206  0.17495  0.67438  0.66552  0.62678  0.63550  11.5486  2.51570  2.08154  0.05191  2000     0.09760  0.65058  0.65051  0.00042 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09279  0.09691  0.19745  0.21955  0.18902  0.16895  0.00000  51.3086  2.34194  0.00275  0        0.12093  0.19323  0.19425  0.04895 
+0.15779  0.15780  0.68552  0.63893  0.63932  0.63636  11.5486  2.45367  2.09007  0.04622  2000     0.09853  0.66242  0.63765  0.00035 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:  1000.00   irm_lambda:     0.10 val acc: 54.87 +- 15.56 test acc: 18.83 +- 2.73
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11070  0.11149  0.00036  0.00000  0.01091  0.01629  0.00000  62.1202  2.29882  -0.0002  0        0.12194  0.00563  0.00814  0.06209 
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  11.5486  0.36966  2.30144  0.00000  2000     0.10063  0.11241  0.10548  0.00033 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10677  0.10291  0.19709  0.19468  0.18171  0.19382  0.00000  62.4444  2.28607  -0.0000  0        0.12508  0.18940  0.19425  0.06241 
+0.11273  0.10634  0.11440  0.12006  0.10930  0.13293  11.5486  0.37344  2.30204  0.00000  2000     0.10096  0.11185  0.12650  0.00034 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09613  0.09348  0.09906  0.10634  0.09631  0.09005  0.00000  54.3180  2.27353  0.00034  0        0.12473  0.09769  0.09819  0.05428 
+0.11318  0.12349  0.11296  0.11149  0.11120  0.10720  11.5486  0.29544  2.30167  0.00000  2000     0.10091  0.11208  0.10934  0.00026 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11426  0.10806  0.10448  0.10720  0.10425  0.10034  0.00000  52.8541  2.39954  0.01111  0        0.12591  0.10436  0.10377  0.05281 
+0.11155  0.11063  0.11151  0.11835  0.11399  0.11835  11.5486  0.38010  2.30180  0.00002  2000     0.10085  0.11275  0.11835  0.00034 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09477  0.09519  0.19736  0.21955  0.18929  0.16895  0.00000  48.9923  2.34194  0.00275  0        0.12516  0.19332  0.19425  0.04895 
+0.11119  0.13207  0.11359  0.10034  0.11165  0.12693  11.5486  0.29005  2.30126  0.00000  2000     0.10089  0.11262  0.11363  0.00025 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:  1000.00   irm_lambda:   100.00 val acc: 14.43 +- 4.10 test acc: 10.81 +- 0.71
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11065  0.11235  0.00036  0.00000  0.01096  0.01629  0.00000  62.0997  2.29882  -0.0002  0        0.12573  0.00566  0.00814  0.06209 
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  11.5486  0.34882  2.30237  0.00000  2000     0.10089  0.11241  0.10548  0.00033 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10673  0.10291  0.19714  0.19554  0.18220  0.19554  0.00000  62.4241  2.28607  -0.0000  0        0.12560  0.18967  0.19554  0.06241 
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  11.5486  0.37289  2.30300  0.00000  2000     0.10094  0.09757  0.09219  0.00036 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09613  0.09348  0.09906  0.10634  0.09631  0.09005  0.00000  54.2977  2.27353  0.00034  0        0.12591  0.09769  0.09819  0.05428 
+0.11854  0.12693  0.11805  0.11749  0.11657  0.11406  11.5486  0.27509  2.30246  0.00000  2000     0.10092  0.11731  0.11578  0.00026 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11430  0.10806  0.10448  0.10720  0.10425  0.10034  0.00000  52.8329  2.39954  0.01111  0        0.14409  0.10436  0.10377  0.05281 
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  11.5486  0.32920  2.30282  0.00001  2000     0.10089  0.10008  0.10806  0.00031 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09477  0.09519  0.19736  0.21955  0.18929  0.16895  0.00000  48.9715  2.34194  0.00275  0        0.12536  0.19332  0.19425  0.04895 
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  11.5486  0.27333  2.30228  0.00000  2000     0.10085  0.10360  0.08790  0.00026 
+RRRRRRR mmd_lambda:     0.10 ib_lambda:  1000.00   irm_lambda:  1000.00 val acc: 14.38 +- 4.18 test acc: 10.79 +- 0.82
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14872  0.12607  0.25849  0.23842  0.24766  0.23499  0.00000  8.94206  2.29882  -0.0002  0        0.14695  0.25307  0.23670  0.06209 
+0.63943  0.62521  0.99878  0.99914  0.96878  0.96312  11.5486  8.98549  0.10091  0.00769  2000     0.10090  0.98378  0.98113  0.14604 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09793  0.09691  0.09888  0.09176  0.09870  0.09262  0.00000  10.8733  2.28607  -0.0000  0        0.12603  0.09879  0.09219  0.06241 
+0.60821  0.60120  0.99882  0.99828  0.96463  0.95626  11.5486  9.04446  0.10733  0.00845  2000     0.10088  0.98173  0.97727  0.15344 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10023  0.09948  0.10019  0.10120  0.09929  0.09176  0.00000  13.0025  2.27353  0.00034  0        0.12607  0.09974  0.09648  0.05428 
+0.60465  0.58061  0.99891  0.99914  0.96156  0.95197  11.5486  9.07218  0.11202  0.00844  2000     0.10090  0.98024  0.97555  0.15691 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  10.2536  2.39954  0.01111  0        0.12577  0.10008  0.10806  0.05281 
+0.59662  0.61235  0.99878  1.00000  0.96386  0.94768  11.5486  9.00209  0.10726  0.00812  2000     0.10094  0.98132  0.97384  0.14952 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  10.6166  2.34194  0.00275  0        0.12622  0.10360  0.08790  0.04895 
+0.61439  0.62607  0.99860  0.99914  0.96557  0.95883  11.5486  9.03503  0.10638  0.00808  2000     0.10091  0.98209  0.97898  0.16033 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:     0.01   irm_lambda:     0.01 val acc: 97.74 +- 0.25 test acc: 61.27 +- 1.46
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14877  0.12607  0.25939  0.23928  0.24856  0.23499  0.00000  8.94204  2.29882  -0.0002  0        0.12577  0.25398  0.23713  0.06209 
+0.64687  0.62607  0.99882  0.99914  0.96914  0.96140  11.5486  8.98548  0.10023  0.00745  2000     0.10098  0.98398  0.98027  0.14560 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09793  0.09691  0.09888  0.09176  0.09866  0.09262  0.00000  10.8733  2.28607  -0.0000  0        0.12473  0.09877  0.09219  0.06241 
+0.61295  0.59434  0.99882  0.99828  0.96508  0.95711  11.5486  9.04355  0.10570  0.00810  2000     0.09867  0.98195  0.97770  0.15247 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.09948  0.10019  0.10120  0.09929  0.09176  0.00000  13.0025  2.27353  0.00034  0        0.12165  0.09974  0.09648  0.05428 
+0.61155  0.58233  0.99900  0.99828  0.96237  0.95197  11.5486  9.07140  0.11054  0.00801  2000     0.09760  0.98069  0.97512  0.15561 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  10.2546  2.39954  0.01111  0        0.12195  0.10008  0.10806  0.05281 
+0.60461  0.61578  0.99882  1.00000  0.96517  0.95025  11.5486  9.00052  0.10501  0.00770  2000     0.09757  0.98200  0.97512  0.14867 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  10.6168  2.34194  0.00275  0        0.12103  0.10360  0.08790  0.04895 
+0.61471  0.61492  0.99869  0.99914  0.96553  0.95711  11.5486  9.03586  0.10652  0.00788  2000     0.09746  0.98211  0.97813  0.15848 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:     0.01   irm_lambda:     0.10 val acc: 97.73 +- 0.20 test acc: 61.81 +- 1.48
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12193  0.11063  0.06293  0.05831  0.06893  0.06861  0.00000  6.66578  2.29882  -0.0002  0        0.12098  0.06593  0.06346  0.06209 
+0.13045  0.11492  0.31799  0.30789  0.30455  0.27873  11.5486  8.90349  1.92812  0.00094  2000     0.09733  0.31127  0.29331  0.06612 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  8.60986  2.28607  -0.0000  0        0.12167  0.09757  0.09219  0.06241 
+0.14038  0.14065  0.35115  0.31560  0.33545  0.32418  11.5486  8.95692  2.05580  0.00079  2000     0.09745  0.34330  0.31989  0.04776 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  10.7518  2.27353  0.00034  0        0.12044  0.09976  0.09648  0.05428 
+0.16271  0.14322  0.85879  0.85591  0.78698  0.79845  11.5486  8.94009  1.80001  -0.0374  2000     0.09761  0.82289  0.82718  0.09526 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  7.88873  2.39954  0.01111  0        0.12142  0.10008  0.10806  0.05281 
+0.12463  0.13722  0.31614  0.30274  0.29458  0.30446  11.5486  8.91381  2.04387  0.00005  2000     0.09762  0.30536  0.30360  0.05378 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  8.30057  2.34194  0.00275  0        0.12040  0.10360  0.08790  0.04895 
+0.14308  0.15866  0.69716  0.68610  0.64005  0.64494  11.5486  8.94171  2.01378  -0.0057  2000     0.09762  0.66860  0.66552  0.06924 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:     0.01   irm_lambda:   100.00 val acc: 48.19 +- 22.21 test acc: 14.03 +- 1.31
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12121  0.11320  0.05995  0.05660  0.06690  0.06689  0.00000  6.64531  2.29882  -0.0002  0        0.12029  0.06342  0.06175  0.06209 
+0.12175  0.10720  0.32611  0.32504  0.30491  0.29931  11.5486  8.88516  2.27322  0.00002  2000     0.09763  0.31551  0.31217  0.02097 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  8.58951  2.28607  -0.0000  0        0.12156  0.09757  0.09219  0.06241 
+0.11106  0.13464  0.62787  0.62607  0.57107  0.55660  11.5486  8.93669  2.27741  -0.0010  2000     0.09763  0.59947  0.59133  0.02626 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  10.7316  2.27353  0.00034  0        0.12139  0.09976  0.09648  0.05428 
+0.14160  0.12006  0.88212  0.87821  0.80628  0.81217  11.5486  8.93884  1.94605  -0.0223  2000     0.09761  0.84420  0.84519  0.09053 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  7.86746  2.39954  0.01111  0        0.12134  0.10008  0.10806  0.05281 
+0.10700  0.11063  0.23625  0.24356  0.22520  0.23842  11.5486  8.89524  2.27578  -0.0001  2000     0.09757  0.23072  0.24099  0.02139 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  8.27974  2.34194  0.00275  0        0.12157  0.10360  0.08790  0.04895 
+0.17056  0.17495  0.88550  0.87650  0.81183  0.82075  11.5486  8.91272  1.99373  -0.0168  2000     0.09759  0.84867  0.84862  0.07725 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:     0.01   irm_lambda:  1000.00 val acc: 56.77 +- 25.63 test acc: 13.04 +- 2.34
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14863  0.12607  0.25587  0.23670  0.24513  0.23241  0.00000  8.94765  2.29882  -0.0002  0        0.12091  0.25050  0.23456  0.06209 
+0.64967  0.62864  0.99887  0.99914  0.97018  0.96140  11.5486  8.99240  0.09917  0.00817  2000     0.09752  0.98452  0.98027  0.10227 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09793  0.09691  0.09888  0.09176  0.09843  0.09262  0.00000  10.8789  2.28607  -0.0000  0        0.12119  0.09866  0.09219  0.06241 
+0.62784  0.63293  0.99882  0.99828  0.96621  0.95797  11.5486  9.05001  0.10418  0.00871  2000     0.09754  0.98251  0.97813  0.10347 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  13.0074  2.27353  0.00034  0        0.12112  0.09976  0.09648  0.05428 
+0.64548  0.61406  0.99891  0.99828  0.96657  0.95883  11.5486  9.07351  0.10445  0.00839  2000     0.09856  0.98274  0.97855  0.10595 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  10.2583  2.39954  0.01111  0        0.12143  0.10008  0.10806  0.05281 
+0.60754  0.61578  0.99891  1.00000  0.96499  0.95368  11.5486  9.00942  0.10572  0.00853  2000     0.09764  0.98195  0.97684  0.10474 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  10.6210  2.34194  0.00275  0        0.12112  0.10360  0.08790  0.04895 
+0.63424  0.63121  0.99846  0.99828  0.96756  0.96140  11.5486  9.04067  0.10303  0.00855  2000     0.09753  0.98301  0.97984  0.10687 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:     0.10   irm_lambda:     0.01 val acc: 97.87 +- 0.12 test acc: 63.30 +- 1.49
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14877  0.12607  0.25646  0.23670  0.24581  0.23327  0.00000  8.94763  2.29882  -0.0002  0        0.12122  0.25113  0.23499  0.06209 
+0.65301  0.63379  0.99878  0.99914  0.97004  0.96054  11.5486  8.99274  0.09874  0.00784  2000     0.09752  0.98441  0.97984  0.10297 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09793  0.09691  0.09888  0.09176  0.09838  0.09262  0.00000  10.8789  2.28607  -0.0000  0        0.12098  0.09863  0.09219  0.06241 
+0.63853  0.63722  0.99878  0.99828  0.96729  0.95883  11.5486  9.04819  0.10154  0.00834  2000     0.09749  0.98303  0.97855  0.10412 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  13.0074  2.27353  0.00034  0        0.12020  0.09976  0.09648  0.05428 
+0.64128  0.60891  0.99909  0.99914  0.96539  0.95883  11.5486  9.07505  0.10515  0.00812  2000     0.09792  0.98224  0.97898  0.10713 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  10.2593  2.39954  0.01111  0        0.12516  0.10008  0.10806  0.05281 
+0.62121  0.63293  0.99891  1.00000  0.96666  0.95368  11.5486  9.00768  0.10321  0.00814  2000     0.09867  0.98279  0.97684  0.10513 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  10.6212  2.34194  0.00275  0        0.12120  0.10360  0.08790  0.04895 
+0.62071  0.62349  0.99878  0.99828  0.96652  0.96140  11.5486  9.04177  0.10349  0.00832  2000     0.09854  0.98265  0.97984  0.10584 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:     0.10   irm_lambda:     0.10 val acc: 97.88 +- 0.11 test acc: 63.50 +- 1.24
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12310  0.11063  0.06545  0.05746  0.07236  0.07118  0.00000  6.67137  2.29882  -0.0002  0        0.12117  0.06890  0.06432  0.06209 
+0.10573  0.09605  0.18735  0.18782  0.18459  0.17581  11.5486  8.90575  2.29197  0.00007  2000     0.10010  0.18597  0.18181  0.00373 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  8.61548  2.28607  -0.0000  0        0.12649  0.09757  0.09219  0.06241 
+0.09784  0.09605  0.20268  0.18782  0.18906  0.18181  11.5486  8.95829  2.29098  0.00005  2000     0.10074  0.19587  0.18482  0.00368 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  10.7567  2.27353  0.00034  0        0.14472  0.09976  0.09648  0.05428 
+0.17633  0.16895  0.21843  0.20497  0.21685  0.20411  11.5486  8.98114  2.28336  0.00003  2000     0.10074  0.21764  0.20454  0.00406 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  7.89348  2.39954  0.01111  0        0.12500  0.10008  0.10806  0.05281 
+0.10249  0.09948  0.20733  0.21612  0.19953  0.20840  11.5486  8.91591  2.28769  -0.0000  2000     0.10072  0.20343  0.21226  0.00415 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  8.30497  2.34194  0.00275  0        0.12560  0.10360  0.08790  0.04895 
+0.10032  0.09777  0.20733  0.18267  0.20106  0.19468  11.5486  8.94974  2.28765  0.00001  2000     0.10072  0.20420  0.18867  0.00383 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:     0.10   irm_lambda:   100.00 val acc: 19.44 +- 1.19 test acc: 11.65 +- 3.00
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12256  0.11149  0.06252  0.05746  0.06983  0.06775  0.00000  6.65090  2.29882  -0.0002  0        0.12526  0.06617  0.06260  0.06209 
+0.11358  0.11320  0.15969  0.16295  0.15441  0.15180  11.5486  8.88531  2.29980  0.00004  2000     0.10071  0.15705  0.15737  0.00360 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  8.59513  2.28607  -0.0000  0        0.13229  0.09757  0.09219  0.06241 
+0.09549  0.10120  0.23101  0.21355  0.21590  0.21183  11.5486  8.93787  2.29927  0.00002  2000     0.10077  0.22346  0.21269  0.00356 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  10.7365  2.27353  0.00034  0        0.12548  0.09976  0.09648  0.05428 
+0.12301  0.10548  0.27559  0.25214  0.26007  0.25128  11.5486  8.96075  2.29762  0.00001  2000     0.10077  0.26783  0.25171  0.00355 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  7.87222  2.39954  0.01111  0        0.12407  0.10008  0.10806  0.05281 
+0.10492  0.10463  0.20697  0.21698  0.19844  0.20754  11.5486  8.89554  2.29884  0.00000  2000     0.10075  0.20271  0.21226  0.00372 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  8.28415  2.34194  0.00275  0        0.12376  0.10360  0.08790  0.04895 
+0.10686  0.11320  0.21622  0.18953  0.20873  0.20497  11.5486  8.92934  2.29938  0.00001  2000     0.10081  0.21247  0.19725  0.00337 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:     0.10   irm_lambda:  1000.00 val acc: 20.63 +- 3.04 test acc: 10.88 +- 0.92
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  15.1505  2.29882  -0.0002  0        0.12436  0.11241  0.10548  0.06209 
+0.13208  0.13207  0.99977  1.00000  0.91379  0.90566  11.5486  9.51760  0.38902  0.20404  2000     0.10076  0.95678  0.95283  0.00243 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09802  0.09777  0.09766  0.09176  0.09753  0.09262  0.00000  17.1140  2.28607  -0.0000  0        0.12575  0.09760  0.09219  0.06241 
+0.13050  0.12349  0.99977  1.00000  0.91216  0.91080  11.5486  9.59947  0.41624  0.20267  2000     0.10076  0.95597  0.95540  0.00246 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08895  0.08833  0.10484  0.10634  0.10565  0.10034  0.00000  18.4304  2.27353  0.00034  0        0.12463  0.10524  0.10334  0.05428 
+0.13650  0.12864  0.99968  1.00000  0.91297  0.91252  11.5486  9.62473  0.41925  0.20552  2000     0.10083  0.95633  0.95626  0.00245 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10289  0.09777  0.09775  0.10291  0.10208  0.11235  0.00000  15.5342  2.39954  0.01111  0        0.11136  0.09992  0.10763  0.05281 
+0.13014  0.13722  0.99950  0.99914  0.91361  0.89965  11.5486  9.53720  0.39609  0.20362  2000     0.10078  0.95655  0.94940  0.00246 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  15.5119  2.34194  0.00275  0        0.12458  0.10360  0.08790  0.04895 
+0.13645  0.13550  0.99968  1.00000  0.91297  0.91166  11.5486  9.59919  0.41903  0.20900  2000     0.10078  0.95633  0.95583  0.00251 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:   100.00   irm_lambda:     0.01 val acc: 95.39 +- 0.26 test acc: 13.31 +- 0.28
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  15.1505  2.29882  -0.0002  0        0.12581  0.11241  0.10548  0.06209 
+0.12928  0.13207  0.99972  1.00000  0.91329  0.90651  11.5486  9.53435  0.38207  0.16377  2000     0.10077  0.95651  0.95325  0.00253 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09802  0.09777  0.09766  0.09176  0.09753  0.09262  0.00000  17.1140  2.28607  -0.0000  0        0.12520  0.09760  0.09219  0.06241 
+0.12919  0.12264  0.99977  1.00000  0.91216  0.91080  11.5486  9.61730  0.40981  0.16523  2000     0.10080  0.95597  0.95540  0.00255 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08895  0.08833  0.10479  0.10634  0.10583  0.10034  0.00000  18.4304  2.27353  0.00034  0        0.13931  0.10531  0.10334  0.05428 
+0.13460  0.12778  0.99963  1.00000  0.91284  0.91252  11.5486  9.64191  0.41211  0.16700  2000     0.10078  0.95624  0.95626  0.00255 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10271  0.09777  0.09775  0.10291  0.10217  0.11235  0.00000  15.5352  2.39954  0.01111  0        0.12645  0.09996  0.10763  0.05281 
+0.12694  0.13636  0.99950  0.99914  0.91338  0.89965  11.5486  9.55092  0.38725  0.16248  2000     0.10084  0.95644  0.94940  0.00254 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  15.5122  2.34194  0.00275  0        0.13684  0.10360  0.08790  0.04895 
+0.13533  0.13207  0.99963  1.00000  0.91288  0.91252  11.5486  9.61827  0.41280  0.17039  2000     0.09978  0.95626  0.95626  0.00261 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:   100.00   irm_lambda:     0.10 val acc: 95.41 +- 0.26 test acc: 13.11 +- 0.33
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  12.8742  2.29882  -0.0002  0        0.12176  0.11241  0.10548  0.06209 
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  11.5486  8.92803  2.30109  0.00000  2000     0.09781  0.11241  0.10548  0.00022 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  14.8505  2.28607  -0.0000  0        0.12172  0.09757  0.09219  0.06241 
+0.11273  0.10634  0.11440  0.12006  0.10930  0.13293  11.5486  8.98209  2.30170  0.00000  2000     0.09729  0.11185  0.12650  0.00024 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08981  0.08919  0.10466  0.10463  0.10551  0.10034  0.00000  16.1797  2.27353  0.00034  0        0.12152  0.10508  0.10248  0.05428 
+0.11318  0.12349  0.11296  0.11149  0.11120  0.10720  11.5486  9.00416  2.30129  0.00001  2000     0.09740  0.11208  0.10934  0.00023 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10452  0.10548  0.09775  0.10291  0.10245  0.11320  0.00000  13.1693  2.39954  0.01111  0        0.12095  0.10010  0.10806  0.05281 
+0.11155  0.11063  0.11151  0.11835  0.11399  0.11835  11.5486  8.94153  2.30166  0.00001  2000     0.09763  0.11275  0.11835  0.00025 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  13.1958  2.34194  0.00275  0        0.12086  0.10360  0.08790  0.04895 
+0.11119  0.13207  0.11359  0.10034  0.11165  0.12693  11.5486  8.97509  2.30136  0.00000  2000     0.09809  0.11262  0.11363  0.00025 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:   100.00   irm_lambda:   100.00 val acc: 11.47 +- 0.73 test acc: 11.26 +- 0.11
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  12.8538  2.29882  -0.0002  0        0.12063  0.11241  0.10548  0.06209 
+0.09865  0.10291  0.09658  0.10720  0.10245  0.09090  11.5486  8.90755  2.30242  0.00000  2000     0.09759  0.09951  0.09905  0.00022 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  14.8302  2.28607  -0.0000  0        0.12119  0.09757  0.09219  0.06241 
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  11.5486  8.96161  2.30285  0.00000  2000     0.09759  0.09757  0.09219  0.00024 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08981  0.08919  0.10466  0.10463  0.10551  0.10034  0.00000  16.1595  2.27353  0.00034  0        0.12099  0.10508  0.10248  0.05428 
+0.11394  0.12349  0.11390  0.11149  0.11223  0.11063  11.5486  8.98367  2.30242  0.00001  2000     0.09762  0.11307  0.11106  0.00023 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10456  0.10548  0.09775  0.10291  0.10245  0.11320  0.00000  13.1480  2.39954  0.01111  0        0.12087  0.10010  0.10806  0.05281 
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  11.5486  8.92106  2.30277  0.00001  2000     0.09756  0.10008  0.10806  0.00025 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  13.1750  2.34194  0.00275  0        0.12150  0.10360  0.08790  0.04895 
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  11.5486  8.95459  2.30241  0.00000  2000     0.09828  0.10360  0.08790  0.00025 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:   100.00   irm_lambda:  1000.00 val acc: 10.09 +- 0.92 test acc: 10.62 +- 0.68
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10885  0.10634  0.00464  0.00257  0.01457  0.01629  0.00000  71.0325  2.29882  -0.0002  0        0.12072  0.00960  0.00943  0.06209 
+0.18941  0.19382  0.51734  0.50514  0.48676  0.47341  11.5486  11.3781  2.05390  0.05515  2000     0.09899  0.50205  0.48928  0.00044 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11033  0.10634  0.19303  0.19725  0.18184  0.19811  0.00000  73.2860  2.28607  -0.0000  0        0.12578  0.18744  0.19768  0.06241 
+0.20146  0.20669  0.34673  0.36535  0.32142  0.33962  11.5486  11.5551  2.21939  0.00845  2000     0.09779  0.33407  0.35248  0.00040 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09631  0.09434  0.09906  0.10634  0.09658  0.09090  0.00000  67.2864  2.27353  0.00034  0        0.12061  0.09782  0.09862  0.05428 
+0.21319  0.21269  0.69662  0.69382  0.65137  0.65780  11.5486  11.3545  2.01224  0.07269  2000     0.09758  0.67399  0.67581  0.00038 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11494  0.10720  0.10497  0.10720  0.10438  0.10034  0.00000  63.0646  2.39954  0.01111  0        0.12056  0.10468  0.10377  0.05281 
+0.16532  0.16809  0.72450  0.70240  0.66964  0.67066  11.5486  11.3850  2.06625  0.06039  2000     0.09777  0.69707  0.68653  0.00042 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09288  0.09691  0.19745  0.21955  0.18902  0.16895  0.00000  59.5742  2.34194  0.00275  0        0.12121  0.19323  0.19425  0.04895 
+0.15089  0.15694  0.73041  0.68782  0.67681  0.67409  11.5486  11.3595  2.07044  0.05583  2000     0.09718  0.70361  0.68096  0.00036 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:  1000.00   irm_lambda:     0.01 val acc: 57.70 +- 13.47 test acc: 18.41 +- 2.29
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10876  0.10634  0.00464  0.00257  0.01457  0.01629  0.00000  71.0324  2.29882  -0.0002  0        0.12146  0.00960  0.00943  0.06209 
+0.18901  0.19039  0.50376  0.49313  0.47367  0.45368  11.5486  11.3905  2.07198  0.04805  2000     0.09723  0.48872  0.47341  0.00043 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11033  0.10634  0.19308  0.19725  0.18184  0.19811  0.00000  73.2860  2.28607  -0.0000  0        0.12175  0.18746  0.19768  0.06241 
+0.18666  0.19639  0.39067  0.40651  0.36044  0.37735  11.5486  11.5352  2.20078  0.01210  2000     0.09722  0.37555  0.39193  0.00039 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09635  0.09434  0.09906  0.10634  0.09658  0.09090  0.00000  67.2864  2.27353  0.00034  0        0.12215  0.09782  0.09862  0.05428 
+0.19266  0.21012  0.49212  0.48199  0.45987  0.45797  11.5486  11.3876  2.06232  0.05220  2000     0.09857  0.47600  0.46998  0.00036 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11485  0.10720  0.10506  0.10720  0.10448  0.10034  0.00000  63.0656  2.39954  0.01111  0        0.12097  0.10477  0.10377  0.05281 
+0.17480  0.16552  0.57287  0.57375  0.54161  0.53602  11.5486  11.4106  2.10439  0.04079  2000     0.09764  0.55724  0.55488  0.00040 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09279  0.09691  0.19745  0.21955  0.18902  0.16895  0.00000  59.5745  2.34194  0.00275  0        0.12136  0.19323  0.19425  0.04895 
+0.13767  0.14579  0.70695  0.66295  0.65399  0.65351  11.5486  11.3446  2.04315  0.06860  2000     0.09765  0.68047  0.65823  0.00036 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:  1000.00   irm_lambda:     0.10 val acc: 50.97 +- 9.04 test acc: 17.62 +- 2.02
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11070  0.11149  0.00036  0.00000  0.01091  0.01629  0.00000  68.7562  2.29882  -0.0002  0        0.12904  0.00563  0.00814  0.06209 
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  11.5486  9.24252  2.30140  0.00000  2000     0.09768  0.11241  0.10548  0.00033 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10682  0.10291  0.19736  0.19468  0.18193  0.19468  0.00000  71.0225  2.28607  -0.0000  0        0.12139  0.18965  0.19468  0.06241 
+0.11273  0.10634  0.11440  0.12006  0.10930  0.13293  11.5486  9.31562  2.30198  0.00000  2000     0.09764  0.11185  0.12650  0.00035 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09613  0.09348  0.09906  0.10634  0.09631  0.09005  0.00000  65.0357  2.27353  0.00034  0        0.12094  0.09769  0.09819  0.05428 
+0.11318  0.12349  0.11296  0.11149  0.11120  0.10720  11.5486  9.24394  2.30171  0.00000  2000     0.09759  0.11208  0.10934  0.00026 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11430  0.10806  0.10448  0.10720  0.10425  0.10034  0.00000  60.6997  2.39954  0.01111  0        0.12126  0.10436  0.10377  0.05281 
+0.11155  0.11063  0.11151  0.11835  0.11399  0.11835  11.5486  9.23168  2.30187  0.00001  2000     0.09801  0.11275  0.11835  0.00031 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09477  0.09519  0.19736  0.21955  0.18929  0.16895  0.00000  57.2582  2.34194  0.00275  0        0.12060  0.19332  0.19425  0.04895 
+0.11119  0.13207  0.11359  0.10034  0.11165  0.12693  11.5486  9.20824  2.30136  0.00000  2000     0.09762  0.11262  0.11363  0.00025 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:  1000.00   irm_lambda:   100.00 val acc: 14.44 +- 4.11 test acc: 10.81 +- 0.71
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11079  0.11235  0.00036  0.00000  0.01096  0.01629  0.00000  68.7357  2.29882  -0.0002  0        0.12114  0.00566  0.00814  0.06209 
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  11.5486  9.22244  2.30231  0.00000  2000     0.09756  0.11241  0.10548  0.00033 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10677  0.10377  0.19754  0.19554  0.18243  0.19554  0.00000  71.0022  2.28607  -0.0000  0        0.12057  0.18999  0.19554  0.06241 
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  11.5486  9.30056  2.30294  0.00000  2000     0.09757  0.09757  0.09219  0.00036 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09613  0.09348  0.09906  0.10634  0.09631  0.09005  0.00000  65.0155  2.27353  0.00034  0        0.10823  0.09769  0.09819  0.05428 
+0.11322  0.12349  0.11300  0.11149  0.11120  0.10720  11.5486  9.22436  2.30258  0.00000  2000     0.09757  0.11210  0.10934  0.00026 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11426  0.10806  0.10448  0.10720  0.10425  0.10034  0.00000  60.6785  2.39954  0.01111  0        0.12062  0.10436  0.10377  0.05281 
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  11.5486  9.21408  2.30286  0.00001  2000     0.09752  0.10008  0.10806  0.00031 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09477  0.09519  0.19736  0.21955  0.18929  0.16895  0.00000  57.2374  2.34194  0.00275  0        0.12056  0.19332  0.19425  0.04895 
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  11.5486  9.18886  2.30219  0.00000  2000     0.09754  0.10360  0.08790  0.00026 
+RRRRRRR mmd_lambda:   100.00 ib_lambda:  1000.00   irm_lambda:  1000.00 val acc: 14.25 +- 4.28 test acc: 10.68 +- 0.70
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14945  0.12521  0.25921  0.23928  0.24919  0.23584  0.00000  68.7256  2.29882  -0.0002  0        0.12114  0.25420  0.23756  0.06209 
+0.63429  0.62864  0.99878  0.99914  0.96770  0.95883  11.5486  88.9341  0.10271  0.00810  2000     0.09871  0.98324  0.97898  0.12997 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09797  0.09691  0.09929  0.09176  0.09906  0.09434  0.00000  88.1533  2.28607  -0.0000  0        0.12115  0.09917  0.09305  0.06241 
+0.61426  0.59948  0.99882  0.99828  0.96463  0.95540  11.5486  89.4638  0.10746  0.00878  2000     0.10024  0.98173  0.97684  0.13965 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  109.558  2.27353  0.00034  0        0.11210  0.09976  0.09648  0.05428 
+0.59098  0.56089  0.99887  0.99742  0.96066  0.94854  11.5486  89.7014  0.11498  0.00874  2000     0.10089  0.97976  0.97298  0.14552 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  80.9346  2.39954  0.01111  0        0.12424  0.10008  0.10806  0.05281 
+0.59297  0.60377  0.99878  0.99914  0.96305  0.94854  11.5486  89.0423  0.10868  0.00831  2000     0.10083  0.98091  0.97384  0.13650 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  85.0841  2.34194  0.00275  0        0.12598  0.10360  0.08790  0.04895 
+0.61106  0.60806  0.99851  0.99828  0.96512  0.95969  11.5486  89.3780  0.10699  0.00827  2000     0.10082  0.98182  0.97898  0.14713 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:     0.01   irm_lambda:     0.01 val acc: 97.63 +- 0.25 test acc: 60.87 +- 1.58
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14954  0.12521  0.26034  0.23928  0.25001  0.23670  0.00000  68.7256  2.29882  -0.0002  0        0.12509  0.25517  0.23799  0.06209 
+0.63794  0.62864  0.99887  0.99914  0.96797  0.96140  11.5486  88.9342  0.10206  0.00783  2000     0.10095  0.98342  0.98027  0.13131 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09797  0.09691  0.09929  0.09176  0.09906  0.09434  0.00000  88.1533  2.28607  -0.0000  0        0.12530  0.09917  0.09305  0.06241 
+0.60384  0.58662  0.99878  0.99828  0.96391  0.95883  11.5486  89.4670  0.10987  0.00861  2000     0.10086  0.98134  0.97855  0.14073 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  109.558  2.27353  0.00034  0        0.12392  0.09976  0.09648  0.05428 
+0.61029  0.58061  0.99896  0.99742  0.96156  0.95454  11.5486  89.6984  0.11127  0.00822  2000     0.10083  0.98026  0.97598  0.14548 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  80.9356  2.39954  0.01111  0        0.12690  0.10008  0.10806  0.05281 
+0.59419  0.60806  0.99891  1.00000  0.96341  0.95283  11.5486  89.0420  0.10761  0.00807  2000     0.10082  0.98116  0.97641  0.13518 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  85.0844  2.34194  0.00275  0        0.13493  0.10360  0.08790  0.04895 
+0.60140  0.60720  0.99855  0.99828  0.96508  0.95969  11.5486  89.3807  0.10888  0.00838  2000     0.10092  0.98182  0.97898  0.14771 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:     0.01   irm_lambda:     0.10 val acc: 97.80 +- 0.16 test acc: 60.95 +- 1.51
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12130  0.11406  0.06329  0.06260  0.07005  0.06946  0.00000  66.4493  2.29882  -0.0002  0        0.12443  0.06667  0.06603  0.06209 
+0.10943  0.11406  0.20417  0.20583  0.20092  0.17324  11.5486  88.8492  2.09150  0.00061  2000     0.10081  0.20255  0.18953  0.04649 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  85.8898  2.28607  -0.0000  0        0.12496  0.09757  0.09219  0.06241 
+0.15490  0.15094  0.88861  0.89365  0.81382  0.82075  11.5486  89.3450  1.84198  -0.0280  2000     0.10088  0.85122  0.85720  0.08811 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  107.308  2.27353  0.00034  0        0.12553  0.09976  0.09648  0.05428 
+0.16614  0.15523  0.86574  0.86106  0.79532  0.80617  11.5486  89.5776  1.83714  -0.0255  2000     0.10083  0.83053  0.83361  0.09233 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  78.5697  2.39954  0.01111  0        0.12485  0.10008  0.10806  0.05281 
+0.11782  0.11578  0.28777  0.27272  0.26886  0.27444  11.5486  88.9518  2.14965  0.00014  2000     0.10089  0.27831  0.27358  0.05204 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  82.7681  2.34194  0.00275  0        0.12600  0.10360  0.08790  0.04895 
+0.18161  0.18953  0.83840  0.85934  0.77349  0.78044  11.5486  89.2742  1.87372  -0.0135  2000     0.10081  0.80595  0.81989  0.07953 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:     0.01   irm_lambda:   100.00 val acc: 59.48 +- 29.80 test acc: 14.60 +- 2.79
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12030  0.11320  0.06085  0.05831  0.06744  0.06689  0.00000  66.4288  2.29882  -0.0002  0        0.12631  0.06414  0.06260  0.06209 
+0.09834  0.10720  0.10069  0.10463  0.09834  0.10463  11.5486  88.8299  2.28366  0.00031  2000     0.10088  0.09951  0.10463  0.03288 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  85.8694  2.28607  -0.0000  0        0.12568  0.09757  0.09219  0.06241 
+0.13812  0.13293  0.88334  0.88593  0.80845  0.81646  11.5486  89.3326  1.94778  -0.0238  2000     0.10083  0.84589  0.85120  0.08739 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  107.287  2.27353  0.00034  0        0.14499  0.09976  0.09648  0.05428 
+0.16302  0.15008  0.87670  0.86535  0.80394  0.81475  11.5486  89.5441  1.93827  -0.0425  2000     0.10085  0.84032  0.84005  0.09534 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  78.5484  2.39954  0.01111  0        0.12452  0.10008  0.10806  0.05281 
+0.11791  0.11235  0.21744  0.22555  0.20760  0.22984  11.5486  88.9324  2.29101  0.00006  2000     0.10084  0.21252  0.22770  0.04262 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  82.7472  2.34194  0.00275  0        0.14414  0.10360  0.08790  0.04895 
+0.16009  0.18181  0.31533  0.27701  0.30089  0.30617  11.5486  89.2710  2.24965  0.00020  2000     0.10092  0.30811  0.29159  0.05555 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:     0.01   irm_lambda:  1000.00 val acc: 46.30 +- 31.81 test acc: 13.55 +- 2.47
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14922  0.12607  0.25623  0.23756  0.24667  0.23241  0.00000  68.7312  2.29882  -0.0002  0        0.12415  0.25145  0.23499  0.06209 
+0.64764  0.63379  0.99896  0.99914  0.96909  0.95883  11.5486  88.9389  0.10005  0.00841  2000     0.09800  0.98403  0.97898  0.09717 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09797  0.09691  0.09915  0.09176  0.09893  0.09434  0.00000  88.1589  2.28607  -0.0000  0        0.12157  0.09904  0.09305  0.06241 
+0.61755  0.60806  0.99887  0.99828  0.96594  0.95969  11.5486  89.4694  0.10565  0.00907  2000     0.09781  0.98240  0.97898  0.09835 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  109.563  2.27353  0.00034  0        0.12078  0.09976  0.09648  0.05428 
+0.63848  0.61406  0.99891  0.99914  0.96512  0.95883  11.5486  89.7004  0.10641  0.00869  2000     0.09861  0.98202  0.97898  0.10212 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  80.9393  2.39954  0.01111  0        0.12186  0.10008  0.10806  0.05281 
+0.60682  0.61320  0.99905  1.00000  0.96576  0.95025  11.5486  89.0472  0.10585  0.00869  2000     0.10067  0.98240  0.97512  0.09924 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  85.0885  2.34194  0.00275  0        0.12441  0.10360  0.08790  0.04895 
+0.60885  0.60548  0.99855  0.99828  0.96458  0.96140  11.5486  89.3866  0.10736  0.00892  2000     0.10082  0.98157  0.97984  0.10467 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:     0.10   irm_lambda:     0.01 val acc: 97.84 +- 0.17 test acc: 62.39 +- 1.63
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.14931  0.12607  0.25686  0.23756  0.24730  0.23413  0.00000  68.7312  2.29882  -0.0002  0        0.12550  0.25208  0.23584  0.06209 
+0.64791  0.62950  0.99896  0.99914  0.96995  0.96140  11.5486  88.9392  0.09977  0.00813  2000     0.10084  0.98445  0.98027  0.09676 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09797  0.09691  0.09915  0.09176  0.09893  0.09434  0.00000  88.1589  2.28607  -0.0000  0        0.12559  0.09904  0.09305  0.06241 
+0.61042  0.60377  0.99896  0.99828  0.96499  0.95969  11.5486  89.4725  0.10761  0.00888  2000     0.10092  0.98197  0.97898  0.10064 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  109.563  2.27353  0.00034  0        0.12566  0.09976  0.09648  0.05428 
+0.64155  0.60891  0.99896  0.99914  0.96499  0.95711  11.5486  89.7009  0.10600  0.00839  2000     0.10088  0.98197  0.97813  0.10346 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  80.9403  2.39954  0.01111  0        0.12574  0.10008  0.10806  0.05281 
+0.60190  0.61063  0.99900  1.00000  0.96463  0.94940  11.5486  89.0479  0.10580  0.00833  2000     0.10089  0.98182  0.97470  0.09965 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  85.0888  2.34194  0.00275  0        0.14471  0.10360  0.08790  0.04895 
+0.62757  0.62178  0.99851  0.99742  0.96666  0.96140  11.5486  89.3837  0.10373  0.00850  2000     0.10080  0.98258  0.97941  0.10432 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:     0.10   irm_lambda:     0.10 val acc: 97.83 +- 0.19 test acc: 62.59 +- 1.76
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12220  0.11235  0.06559  0.06175  0.07213  0.06861  0.00000  66.4549  2.29882  -0.0002  0        0.12376  0.06886  0.06518  0.06209 
+0.10194  0.07890  0.10425  0.09262  0.10141  0.10463  11.5486  88.8500  2.28581  0.00008  2000     0.10076  0.10283  0.09862  0.00871 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  85.8954  2.28607  -0.0000  0        0.12538  0.09757  0.09219  0.06241 
+0.09455  0.08833  0.10678  0.09519  0.11093  0.11749  11.5486  89.3757  2.28907  0.00005  2000     0.10078  0.10885  0.10634  0.00987 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  107.312  2.27353  0.00034  0        0.12379  0.09976  0.09648  0.05428 
+0.15838  0.16209  0.13411  0.13550  0.13348  0.12950  11.5486  89.6048  2.28138  0.00005  2000     0.10075  0.13380  0.13250  0.00965 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  78.5744  2.39954  0.01111  0        0.12453  0.10008  0.10806  0.05281 
+0.08710  0.09005  0.11693  0.11835  0.11702  0.13379  11.5486  88.9526  2.28667  0.00005  2000     0.10081  0.11697  0.12607  0.01020 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  82.7725  2.34194  0.00275  0        0.12420  0.10360  0.08790  0.04895 
+0.13018  0.13036  0.18685  0.17581  0.18775  0.16466  11.5486  89.2909  2.28196  0.00004  2000     0.10080  0.18730  0.17024  0.01144 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:     0.10   irm_lambda:   100.00 val acc: 12.68 +- 2.50 test acc: 11.44 +- 2.64
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.12170  0.11320  0.06252  0.05917  0.06938  0.06518  0.00000  66.4344  2.29882  -0.0002  0        0.12325  0.06595  0.06217  0.06209 
+0.12685  0.10634  0.11093  0.10120  0.11178  0.11063  11.5486  88.8296  2.29842  0.00004  2000     0.10080  0.11135  0.10591  0.00860 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  85.8750  2.28607  -0.0000  0        0.12422  0.09757  0.09219  0.06241 
+0.10889  0.10548  0.12902  0.12178  0.12911  0.12950  11.5486  89.3552  2.29940  0.00002  2000     0.10075  0.12906  0.12564  0.00956 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10041  0.09948  0.10019  0.10120  0.09933  0.09176  0.00000  107.292  2.27353  0.00034  0        0.12541  0.09976  0.09648  0.05428 
+0.11534  0.11921  0.14905  0.14922  0.14656  0.15008  11.5486  89.5845  2.29785  0.00001  2000     0.10086  0.14781  0.14965  0.00941 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10510  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  78.5532  2.39954  0.01111  0        0.12452  0.10008  0.10806  0.05281 
+0.09161  0.10634  0.17363  0.17753  0.16497  0.18353  11.5486  88.9323  2.29871  0.00004  2000     0.10080  0.16930  0.18053  0.01006 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  82.7516  2.34194  0.00275  0        0.14471  0.10360  0.08790  0.04895 
+0.09558  0.09691  0.15004  0.14665  0.14625  0.13036  11.5486  89.2706  2.29771  0.00001  2000     0.10081  0.14814  0.13850  0.01126 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:     0.10   irm_lambda:  1000.00 val acc: 14.01 +- 2.49 test acc: 10.77 +- 1.29
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  74.9341  2.29882  -0.0002  0        0.12497  0.11241  0.10548  0.06209 
+0.13095  0.13036  0.99977  1.00000  0.91365  0.90566  11.5486  89.4626  0.38972  0.20463  2000     0.10016  0.95671  0.95283  0.00244 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09811  0.09777  0.09766  0.09176  0.09753  0.09262  0.00000  94.3940  2.28607  -0.0000  0        0.12112  0.09760  0.09219  0.06241 
+0.12978  0.12521  0.99977  1.00000  0.91221  0.91080  11.5486  90.0151  0.41534  0.20247  2000     0.09778  0.95599  0.95540  0.00245 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08895  0.08833  0.10497  0.10548  0.10583  0.10034  0.00000  114.986  2.27353  0.00034  0        0.12159  0.10540  0.10291  0.05428 
+0.13835  0.12950  0.99968  1.00000  0.91315  0.91423  11.5486  90.2456  0.41710  0.20550  2000     0.09848  0.95642  0.95711  0.00245 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10253  0.09605  0.09775  0.10291  0.10217  0.11235  0.00000  86.2152  2.39954  0.01111  0        0.12115  0.09996  0.10763  0.05281 
+0.12707  0.13121  0.99950  0.99914  0.91302  0.89879  11.5486  89.5787  0.40092  0.20355  2000     0.09979  0.95626  0.94897  0.00247 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10023  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  89.9794  2.34194  0.00275  0        0.12534  0.10360  0.08790  0.04895 
+0.13596  0.13464  0.99941  0.99914  0.91302  0.91166  11.5486  89.9392  0.41978  0.20753  2000     0.10077  0.95621  0.95540  0.00250 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:   100.00   irm_lambda:     0.01 val acc: 95.39 +- 0.28 test acc: 13.24 +- 0.41
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  74.9341  2.29882  -0.0002  0        0.12609  0.11241  0.10548  0.06209 
+0.12770  0.12778  0.99982  1.00000  0.91334  0.90394  11.5486  89.4796  0.38294  0.16452  2000     0.10078  0.95658  0.95197  0.00254 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09811  0.09777  0.09766  0.09176  0.09753  0.09262  0.00000  94.3940  2.28607  -0.0000  0        0.12564  0.09760  0.09219  0.06241 
+0.12829  0.11835  0.99982  1.00000  0.91207  0.91080  11.5486  90.0331  0.40903  0.16518  2000     0.10074  0.95594  0.95540  0.00255 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08891  0.08833  0.10497  0.10548  0.10578  0.10034  0.00000  114.986  2.27353  0.00034  0        0.14137  0.10538  0.10291  0.05428 
+0.13420  0.12778  0.99959  1.00000  0.91297  0.91423  11.5486  90.2653  0.41239  0.16706  2000     0.10078  0.95628  0.95711  0.00255 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10240  0.09605  0.09775  0.10291  0.10217  0.11235  0.00000  86.2162  2.39954  0.01111  0        0.12419  0.09996  0.10763  0.05281 
+0.12436  0.12864  0.99954  0.99914  0.91288  0.89794  11.5486  89.5946  0.39320  0.16403  2000     0.10081  0.95621  0.94854  0.00256 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10023  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  89.9797  2.34194  0.00275  0        0.12489  0.10360  0.08790  0.04895 
+0.13469  0.13636  0.99936  0.99914  0.91270  0.91166  11.5486  89.9571  0.41263  0.16888  2000     0.10092  0.95603  0.95540  0.00260 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:   100.00   irm_lambda:     0.10 val acc: 95.37 +- 0.31 test acc: 12.99 +- 0.40
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  72.6578  2.29882  -0.0002  0        0.12474  0.11241  0.10548  0.06209 
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  11.5486  88.8716  2.30082  0.00000  2000     0.10088  0.11241  0.10548  0.00022 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  92.1305  2.28607  -0.0000  0        0.12486  0.09757  0.09219  0.06241 
+0.11273  0.10634  0.11440  0.12006  0.10930  0.13293  11.5486  89.3987  2.30161  0.00000  2000     0.10089  0.11185  0.12650  0.00024 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08999  0.08919  0.10475  0.10463  0.10565  0.09948  0.00000  112.735  2.27353  0.00034  0        0.12549  0.10520  0.10205  0.05428 
+0.11318  0.12349  0.11296  0.11149  0.11120  0.10720  11.5486  89.6270  2.30188  0.00001  2000     0.10091  0.11208  0.10934  0.00023 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10434  0.10463  0.09775  0.10291  0.10240  0.11320  0.00000  83.8503  2.39954  0.01111  0        0.12545  0.10008  0.10806  0.05281 
+0.11155  0.11063  0.11151  0.11835  0.11399  0.11835  11.5486  88.9776  2.30195  0.00001  2000     0.10092  0.11275  0.11835  0.00026 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  87.6634  2.34194  0.00275  0        0.12488  0.10360  0.08790  0.04895 
+0.11119  0.13207  0.11359  0.10034  0.11165  0.12693  11.5486  89.3153  2.30142  0.00000  2000     0.10090  0.11262  0.11363  0.00025 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:   100.00   irm_lambda:   100.00 val acc: 11.47 +- 0.73 test acc: 11.26 +- 0.11
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  0.00000  72.6373  2.29882  -0.0002  0        0.13732  0.11241  0.10548  0.06209 
+0.09874  0.10377  0.09663  0.10720  0.10249  0.09090  11.5486  88.8511  2.30191  0.00000  2000     0.10082  0.09956  0.09905  0.00022 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09784  0.09777  0.09766  0.09176  0.09748  0.09262  0.00000  92.1101  2.28607  -0.0000  0        0.12517  0.09757  0.09219  0.06241 
+0.10050  0.10034  0.10132  0.09262  0.09681  0.09691  11.5486  89.3783  2.30260  0.00000  2000     0.10081  0.09906  0.09476  0.00024 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.08999  0.08919  0.10475  0.10463  0.10565  0.09948  0.00000  112.715  2.27353  0.00034  0        0.12456  0.10520  0.10205  0.05428 
+0.12951  0.11492  0.11377  0.12264  0.11661  0.12006  11.5486  89.6065  2.30337  0.00001  2000     0.10081  0.11519  0.12135  0.00023 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10438  0.10548  0.09775  0.10291  0.10240  0.11320  0.00000  83.8290  2.39954  0.01111  0        0.12460  0.10008  0.10806  0.05281 
+0.10713  0.09262  0.11751  0.11320  0.11458  0.10806  11.5486  88.9571  2.30309  0.00001  2000     0.10084  0.11605  0.11063  0.00026 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10028  0.10291  0.10199  0.08061  0.10520  0.09519  0.00000  87.6426  2.34194  0.00275  0        0.12497  0.10360  0.08790  0.04895 
+0.09991  0.09090  0.09739  0.10120  0.09920  0.09090  11.5486  89.2948  2.30236  0.00001  2000     0.10083  0.09829  0.09605  0.00025 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:   100.00   irm_lambda:  1000.00 val acc: 10.57 +- 0.98 test acc: 11.02 +- 1.09
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10830  0.10634  0.00482  0.00257  0.01515  0.01715  0.00000  130.816  2.29882  -0.0002  0        0.12469  0.00999  0.00986  0.06209 
+0.19325  0.19725  0.47597  0.46397  0.44647  0.42967  11.5486  91.3455  2.09292  0.04019  2000     0.09996  0.46122  0.44682  0.00042 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11024  0.10634  0.19425  0.19811  0.18302  0.19811  0.00000  150.565  2.28607  -0.0000  0        0.12060  0.18863  0.19811  0.06241 
+0.19857  0.21269  0.32679  0.33876  0.30247  0.31732  11.5486  91.9801  2.23838  0.00511  2000     0.09832  0.31463  0.32804  0.00039 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09631  0.09434  0.09906  0.10634  0.09658  0.09090  0.00000  163.842  2.27353  0.00034  0        0.12627  0.09782  0.09862  0.05428 
+0.21012  0.21526  0.54657  0.54202  0.51333  0.52229  11.5486  92.0055  2.05287  0.05708  2000     0.10042  0.52995  0.53216  0.00037 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11476  0.10806  0.10484  0.10720  0.10438  0.10034  0.00000  133.745  2.39954  0.01111  0        0.12615  0.10461  0.10377  0.05281 
+0.18314  0.19554  0.80046  0.79845  0.74502  0.73928  11.5486  91.3793  1.98884  0.09621  2000     0.10119  0.77274  0.76886  0.00046 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09279  0.09691  0.19745  0.21955  0.18902  0.16895  0.00000  134.041  2.34194  0.00275  0        0.12428  0.19323  0.19425  0.04895 
+0.17141  0.17753  0.68926  0.64150  0.63698  0.64751  11.5486  91.7319  2.12522  0.03465  2000     0.10124  0.66312  0.64451  0.00033 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:  1000.00   irm_lambda:     0.01 val acc: 54.41 +- 15.29 test acc: 19.13 +- 1.32
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10830  0.10634  0.00487  0.00257  0.01515  0.01715  0.00000  130.816  2.29882  -0.0002  0        0.12414  0.01001  0.00986  0.06209 
+0.16505  0.16809  0.49474  0.47684  0.46217  0.46140  11.5486  91.3508  2.09678  0.03642  2000     0.10123  0.47845  0.46912  0.00042 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11024  0.10634  0.19416  0.19897  0.18302  0.19811  0.00000  150.565  2.28607  -0.0000  0        0.14359  0.18859  0.19854  0.06241 
+0.19325  0.19982  0.33202  0.34133  0.30730  0.32847  11.5486  91.9475  2.20736  0.01019  2000     0.10138  0.31966  0.33490  0.00038 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09631  0.09434  0.09906  0.10634  0.09658  0.09090  0.00000  163.842  2.27353  0.00034  0        0.11171  0.09782  0.09862  0.05428 
+0.21919  0.23413  0.61984  0.62435  0.58438  0.57718  11.5486  91.9921  2.03164  0.06142  2000     0.10117  0.60211  0.60077  0.00037 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11467  0.10806  0.10488  0.10720  0.10438  0.10034  0.00000  133.746  2.39954  0.01111  0        0.12531  0.10463  0.10377  0.05281 
+0.19618  0.18610  0.62561  0.61578  0.58375  0.58747  11.5486  91.4238  2.06531  0.05693  2000     0.10120  0.60468  0.60163  0.00042 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09292  0.09691  0.19745  0.21955  0.18897  0.16895  0.00000  134.042  2.34194  0.00275  0        0.12337  0.19321  0.19425  0.04895 
+0.16420  0.17066  0.60896  0.56003  0.56286  0.57375  11.5486  91.7179  2.09174  0.04662  2000     0.10120  0.58591  0.56689  0.00035 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:  1000.00   irm_lambda:     0.10 val acc: 51.47 +- 10.21 test acc: 18.76 +- 2.08
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11101  0.11235  0.00040  0.00000  0.01105  0.01629  0.00000  128.539  2.29882  -0.0002  0        0.12503  0.00572  0.00814  0.06209 
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  11.5486  89.1853  2.30131  0.00000  2000     0.10124  0.11241  0.10548  0.00033 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10691  0.10463  0.19939  0.19811  0.18432  0.19639  0.00000  148.302  2.28607  -0.0000  0        0.12522  0.19186  0.19725  0.06241 
+0.11273  0.10634  0.11440  0.12006  0.10930  0.13293  11.5486  89.7545  2.30189  0.00000  2000     0.10124  0.11185  0.12650  0.00038 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09613  0.09348  0.09906  0.10634  0.09631  0.09005  0.00000  161.591  2.27353  0.00034  0        0.12566  0.09769  0.09819  0.05428 
+0.11318  0.12349  0.11296  0.11149  0.11120  0.10720  11.5486  89.8658  2.30221  0.00000  2000     0.10122  0.11208  0.10934  0.00026 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11448  0.10806  0.10448  0.10720  0.10434  0.10034  0.00000  131.380  2.39954  0.01111  0        0.12486  0.10441  0.10377  0.05281 
+0.11155  0.11063  0.11151  0.11835  0.11399  0.11835  11.5486  89.2665  2.30214  0.00001  2000     0.10124  0.11275  0.11835  0.00031 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09477  0.09519  0.19736  0.21955  0.18929  0.16895  0.00000  131.725  2.34194  0.00275  0        0.12319  0.19332  0.19425  0.04895 
+0.11119  0.13207  0.11359  0.10034  0.11165  0.12693  11.5486  89.5504  2.30139  0.00000  2000     0.10112  0.11262  0.11363  0.00026 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:  1000.00   irm_lambda:   100.00 val acc: 14.49 +- 4.17 test acc: 10.81 +- 0.71
+RRRRRRR args.seed:  0     args.trial_seed:  0
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11092  0.11235  0.00040  0.00000  0.01109  0.01629  0.00000  128.519  2.29882  -0.0002  0        0.12441  0.00575  0.00814  0.06209 
+0.11412  0.10034  0.11160  0.10891  0.11323  0.10205  11.5486  89.1652  2.30194  0.00000  2000     0.10113  0.11241  0.10548  0.00033 
+RRRRRRR args.seed:  1     args.trial_seed:  1
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.10718  0.10463  0.19948  0.19811  0.18446  0.19725  0.00000  148.282  2.28607  -0.0000  0        0.14307  0.19197  0.19768  0.06241 
+0.10050  0.10034  0.10132  0.09262  0.09681  0.09691  11.5486  89.7184  2.30263  0.00000  2000     0.10115  0.09906  0.09476  0.00036 
+RRRRRRR args.seed:  2     args.trial_seed:  2
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09613  0.09348  0.09906  0.10634  0.09631  0.09005  0.00000  161.571  2.27353  0.00034  0        0.12575  0.09769  0.09819  0.05428 
+0.09576  0.09262  0.09730  0.11063  0.09893  0.09948  11.5486  89.8442  2.30344  0.00001  2000     0.10005  0.09811  0.10506  0.00026 
+RRRRRRR args.seed:  3     args.trial_seed:  3
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.11448  0.10806  0.10448  0.10720  0.10434  0.10034  0.00000  131.359  2.39954  0.01111  0        0.12297  0.10441  0.10377  0.05281 
+0.09080  0.10034  0.08796  0.09434  0.09072  0.09605  11.5486  89.2568  2.30318  0.00002  2000     0.09736  0.08934  0.09519  0.00032 
+RRRRRRR args.seed:  4     args.trial_seed:  4
+LRRRRRRR: 0.1
+DECAY STEP: 600
+env0_in  env0_ou  env1_in  env1_ou  env2_in  env2_ou  epoch    loss     nll      penalty  step     step_ti  train_a  val_acc  var     
+0.09477  0.09519  0.19736  0.21955  0.18929  0.16895  0.00000  131.704  2.34194  0.00275  0        0.12115  0.19332  0.19425  0.04895 
+0.11119  0.13207  0.11359  0.10034  0.11165  0.12693  11.5486  89.5273  2.30215  0.00000  2000     0.09699  0.11262  0.11363  0.00025 
+RRRRRRR mmd_lambda:  1000.00 ib_lambda:  1000.00   irm_lambda:  1000.00 val acc: 14.13 +- 4.47 test acc: 10.53 +- 0.86
+Report with best val performance: val acc:97.88 +- 0.15  test acc:63.64 +- 1.15
+Corresponding hypers: {'mmd_lambda': 0.1, 'ib_lambda': 0.1, 'irm_lambda': 0.01}
